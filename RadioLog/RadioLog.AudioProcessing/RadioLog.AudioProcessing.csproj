@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{245648DA-5D3E-4BC2-AC12-EC45A473BF6F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RadioLog.AudioProcessing</RootNamespace>
+    <AssemblyName>RadioLog.AudioProcessing</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\output\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MathNet.Numerics, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MathNet.Numerics.3.7.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioEnums.cs" />
+    <Compile Include="AudioInterfaces.cs" />
+    <Compile Include="AudioProcessingGlobals.cs" />
+    <Compile Include="AudioRecorder.cs" />
+    <Compile Include="BaseAudioClasses.cs" />
+    <Compile Include="Bits\MessageFramer.cs" />
+    <Compile Include="Bits\SyncPattern.cs" />
+    <Compile Include="Bits\SyncPatternMatcher.cs" />
+    <Compile Include="Decoders\DecoderHelpers.cs" />
+    <Compile Include="Decoders\DSD\DSD.cs" />
+    <Compile Include="Decoders\DSD\PointerArrayHolder.cs" />
+    <Compile Include="Decoders\DSD\P25Helper.cs" />
+    <Compile Include="Decoders\Fleetsync2Decoder.cs" />
+    <Compile Include="Decoders\Fleetsync2\CRCFleetsync.cs" />
+    <Compile Include="Decoders\Fleetsync2\Fleetsync2MessageProcessor.cs" />
+    <Compile Include="Decoders\Fleetsync2\FleetsyncMessage.cs" />
+    <Compile Include="Decoders\Fleetsync2\FleetsyncMessageType.cs" />
+    <Compile Include="Decoders\MDC1200.cs" />
+    <Compile Include="Decoders\P25Decoder.cs" />
+    <Compile Include="Decoders\P25\FrameSync.cs" />
+    <Compile Include="Decoders\P25\Message\P25Message.cs" />
+    <Compile Include="Decoders\P25\Message\PDUMessage.cs" />
+    <Compile Include="Decoders\P25\Message\TSBKMessage.cs" />
+    <Compile Include="Decoders\P25\P25Interleave.cs" />
+    <Compile Include="Decoders\P25\Reference\DataUnitID.cs" />
+    <Compile Include="Decoders\P25\Reference\Opcode.cs" />
+    <Compile Include="Decoders\P25\Reference\PDUFormat.cs" />
+    <Compile Include="Decoders\P25\TrellisHalfRate.cs" />
+    <Compile Include="Decoders\RootDecoder.cs" />
+    <Compile Include="Decoders\STAR.cs" />
+    <Compile Include="DSP\Filter\C4FMSymbolFilter.cs" />
+    <Compile Include="DSP\Filter\ComplexFilter.cs" />
+    <Compile Include="DSP\Filter\ComplexFIRFilter.cs" />
+    <Compile Include="DSP\Filter\FFT.cs" />
+    <Compile Include="DSP\Filter\FilterFactory.cs" />
+    <Compile Include="DSP\Filter\Filters.cs" />
+    <Compile Include="DSP\Filter\FloatFIRFilter.cs" />
+    <Compile Include="DSP\Filter\FloatHalfBandFilter.cs" />
+    <Compile Include="DSP\Filter\Window.cs" />
+    <Compile Include="DSP\FSK\C4FMDecoder.cs" />
+    <Compile Include="DSP\FSK\C4FMSlicer.cs" />
+    <Compile Include="DSP\FSK\C4FMSymbol.cs" />
+    <Compile Include="DSP\FSK\FSK2Decoder.cs" />
+    <Compile Include="DSP\FSK\P25MessageFramer.cs" />
+    <Compile Include="DSP\FSK\P25MessageProcessor.cs" />
+    <Compile Include="DSP\NBFM\FMDiscriminator.cs" />
+    <Compile Include="IcyStream.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ProcessorWaveProvider.cs" />
+    <Compile Include="Providers\SavingWaveProvider.cs" />
+    <Compile Include="Providers\SingleChannelMuxProvider.cs" />
+    <Compile Include="Providers\WaveOutMixingProvider.cs" />
+    <Compile Include="ReadFullyStream.cs" />
+    <Compile Include="SampleAggregator.cs" />
+    <Compile Include="SilenceHelper.cs" />
+    <Compile Include="VolumeHelper.cs" />
+    <Compile Include="WaveFileHelper.cs" />
+    <Compile Include="WaveInChannelProcessor.cs" />
+    <Compile Include="WaveInManager.cs" />
+    <Compile Include="WaveStreamProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RadioLog.Common\RadioLog.Common.csproj">
+      <Project>{01b7bbed-21ac-49d5-b35d-c4aae5a847b5}</Project>
+      <Name>RadioLog.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

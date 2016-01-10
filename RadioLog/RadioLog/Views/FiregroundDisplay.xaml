@@ -1,0 +1,77 @@
+﻿<local:BaseMainWindowView x:Class="RadioLog.Views.FiregroundDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RadioLog"
+             xmlns:views="clr-namespace:RadioLog.Views"
+             xmlns:cc="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="780">
+    <Grid x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="spButtons" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Orientation="Horizontal" Margin="0,2">
+            <Button x:Name="bClearScreen" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0" Click="bClearScreen_Click">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Margin="6,0" Text="CLEAR" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="1" Margin="6,0" Text="SCREEN" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button x:Name="bBeginRollCall" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="16,0,2,0" Background="Green" Click="bBeginRollCall_Click">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Margin="6,0" Text="BEGIN" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black"/>
+                    <TextBlock Grid.Row="1" Margin="6,0" Text="ROLLCALL" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black"/>
+                </Grid>
+            </Button>
+            <Button x:Name="bManualMayday" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="16,0,2,0" Background="Red" Click="bManualMayday_Click">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Margin="6,0" Text="MANUAL" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black"/>
+                    <TextBlock Grid.Row="1" Margin="6,0" Text="MAYDAY" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black"/>
+                </Grid>
+            </Button>
+            <Button x:Name="bAllRadios" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="16,0,2,0" Click="bAllRadios_Click">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Margin="6,0" Text="ALL" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="1" Margin="6,0" Text="RADIOS" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <!--
+            <Button x:Name="bSpareRadios" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="2,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Margin="6,0" Text="SPARE" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="1" Margin="6,0" Text="RADIOS" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            -->
+        </StackPanel>
+        <views:UnitsOnSceneView x:Name="vwUnitsOnScene" Grid.Row="1" Grid.Column="1" />
+    </Grid>
+</local:BaseMainWindowView>

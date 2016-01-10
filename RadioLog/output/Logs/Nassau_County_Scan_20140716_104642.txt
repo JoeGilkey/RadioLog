@@ -1,0 +1,2 @@
+Timestamp|Source Type|Source Name|Signal Code Type|Signaling Format|Unit Id|Agency Name|Unit Name|Radio Name|Radio Type|Personnel Name|Role Name|Description
+7/16/2014 - 10:50:44|Audio Stream|Nassau County Scan|PTT|MDC|043B|||||||PTT ID: 043b [Pre-ID]

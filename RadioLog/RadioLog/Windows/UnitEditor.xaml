@@ -1,0 +1,35 @@
+﻿<rlw:BaseRadioLogWindow x:Class="RadioLog.Windows.UnitEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:rlw="clr-namespace:RadioLog.Windows"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowTransitionsEnabled="False"
+        Title="Units" Height="440" Width="680" WindowStyle="ToolWindow" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" ShowCloseButton="False" ShowMaxRestoreButton="False" ShowMinButton="False" ShowIconOnTitleBar="False">
+    <rlw:BaseRadioLogWindow.Resources>
+        <DataTemplate x:Key="DTEditUnitName">
+            <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding UnitName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0"/>
+        </DataTemplate>
+    </rlw:BaseRadioLogWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="8">
+            <Button x:Name="btnAddUnit" Content="Add New Unit" MinWidth="180" Margin="4" Click="btnAddUnit_Click" Style="{StaticResource AccentedSquareButtonStyle}"/>
+        </StackPanel>
+        <Rectangle Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="1" Fill="{DynamicResource AccentColorBrush}"></Rectangle>
+        <DataGrid x:Name="dgUnits" FontSize="18" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserSortColumns="False" GridLinesVisibility="All">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Unit Name" CellTemplate="{StaticResource DTEditUnitName}" Width="2*"/>
+                <DataGridComboBoxColumn x:Name="colAgency" Width="*" Header="Agency" SelectedValueBinding="{Binding AgencyId}" SelectedValuePath="AgencyId" DisplayMemberPath="AgencyName"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="8">
+            <Button x:Name="btnOk" Content="OK" MinWidth="80" Margin="4" IsDefault="True" Click="btnOk_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" MinWidth="80" Margin="4" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</rlw:BaseRadioLogWindow>

@@ -1,0 +1,107 @@
+﻿<rlw:BaseRadioLogWindow x:Class="RadioLog.Windows.WaveInChannelSourceEditorDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:rlw="clr-namespace:RadioLog.Windows"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowTransitionsEnabled="False"
+        Topmost="True"
+        Title="Line In Editor" Height="360" Width="840" WindowStyle="ToolWindow" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" ShowCloseButton="False" ShowMaxRestoreButton="False" ShowMinButton="False" ShowIconOnTitleBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.IsSharedSizeScope="True">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Right" Text="Source Name:" Margin="8" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <TextBox x:Name="tbSourceName" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" TextChanged="tbTextChanged"/>
+
+                <TextBlock HorizontalAlignment="Right" Text="Color:" Margin="8" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <ComboBox x:Name="cbSourceColor" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" DisplayMemberPath="BrushName" SelectedValuePath="BrushKey"/>
+
+                <TextBlock HorizontalAlignment="Right" Text="Display Order:" Margin="8" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <Controls:NumericUpDown x:Name="sDisplayOrder" Margin="4" Minimum="0" Maximum="10000" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3"/>
+            </Grid>
+            <Grid x:Name="grdStreamingSource">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Right" Text="Line In/Channel:" Margin="8" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <ComboBox x:Name="cbMultiLineIn" Margin="4" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Stretch" DisplayMemberPath="DeviceName" Grid.Column="1" SelectionChanged="cbSelectionChanged"/>
+                <Controls:NumericUpDown x:Name="nudChannelNumber" Margin="4" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="2" Maximum="8" Minimum="1" Value="1"/>
+            </Grid>
+            <Grid x:Name="grdRecord">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Right" Text="Priority:" Margin="8" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <Controls:ToggleSwitch x:Name="tsPriority" Grid.Column="1" OnLabel="Yes " OffLabel="No " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Right" Text="Record Audio:" Margin="8" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <Controls:ToggleSwitch x:Name="tsRecordingEnabled" Grid.Column="3" OnLabel="Yes " OffLabel="No " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Right" Text="Recording Style:" Margin="8" Grid.Column="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <ComboBox x:Name="cbRecordingStyle" Grid.Column="5" VerticalAlignment="Center" Margin="4" HorizontalAlignment="Stretch" SelectedIndex="0" SelectionChanged="cbRecordingStyle_SelectionChanged">
+                    <ComboBoxItem>VOX Style</ComboBoxItem>
+                    <ComboBoxItem>Fixed Time</ComboBoxItem>
+                </ComboBox>
+                <TextBlock x:Name="tbRecordTimeLabel" HorizontalAlignment="Right" Text="VOX Time (sec):" Margin="8" Grid.Column="6" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <Controls:NumericUpDown x:Name="sRecordingKickTime" Minimum="3" Maximum="60" Margin="4" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="7"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Right" Text="Noise Floor:" Margin="8" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <ComboBox x:Name="cbNoiseFloor" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" DisplayMemberPath="NoiseFloorName" SelectedValuePath="NoiseFloorValue" ToolTip="Noise Floor setting (Low = 25, High = 80, Extra High = 100)"/>
+                <Controls:NumericUpDown x:Name="sCustomNoiseFloor" Minimum="1" Maximum="1000" Margin="4" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="2" ToolTip="Custom Noise Floor between 1 (low) and 1000 (high)."/>
+                <CheckBox x:Name="cbRemoveNoise" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14">Remove Noise</CheckBox>
+                <TextBlock HorizontalAlignment="Right" Text="Audio Output Device:" Margin="8" Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                <ComboBox x:Name="cbWaveOutDev" Grid.Column="5" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" DisplayMemberPath="DeviceName" SelectedValuePath="DeviceListNum"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="cbDecodeMDC1200" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14">Decode MDC-1200</CheckBox>
+                <CheckBox x:Name="cbDecodeGEStar" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14">Decode GE Star</CheckBox>
+                <CheckBox x:Name="cbDecodeFleetSync" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14">Decode FleetSync2</CheckBox>
+            </Grid>
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="*** WARNING: Some changes may not take effect until you restart! ***" FontWeight="Bold" FontSize="12"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="8">
+            <Button x:Name="btnDelete" Content="Delete" MinWidth="80" Margin="4" Background="Red" Click="btnDelete_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="8">
+            <Button x:Name="btnOk" Content="OK" MinWidth="80" Margin="4" IsDefault="True" Click="btnOk_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" MinWidth="80" Margin="4" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</rlw:BaseRadioLogWindow>

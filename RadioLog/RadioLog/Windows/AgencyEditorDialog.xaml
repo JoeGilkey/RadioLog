@@ -1,0 +1,34 @@
+﻿<rlw:BaseRadioLogWindow x:Class="RadioLog.Windows.AgencyEditorDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:rlw="clr-namespace:RadioLog.Windows"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowTransitionsEnabled="False"
+        Title="Agencies" Height="540" Width="680" WindowStyle="ToolWindow" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" ShowCloseButton="False" ShowMaxRestoreButton="False" ShowMinButton="False" ShowIconOnTitleBar="False">
+    <rlw:BaseRadioLogWindow.Resources>
+        <DataTemplate x:Key="DTEditAgencyName">
+            <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding AgencyName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0"/>
+        </DataTemplate>
+    </rlw:BaseRadioLogWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="8">
+            <Button x:Name="btnAddAgency" Content="Add New Agency" MinWidth="180" Margin="4" Click="btnAddAgency_Click" Style="{StaticResource AccentedSquareButtonStyle}"/>
+        </StackPanel>
+        <Rectangle Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="1" Fill="{DynamicResource AccentColorBrush}"></Rectangle>
+        <DataGrid x:Name="dgAgencies" FontSize="18" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Agency Name" CellTemplate="{StaticResource DTEditAgencyName}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="8">
+            <Button x:Name="btnOk" Content="OK" MinWidth="80" Margin="4" IsDefault="True" Click="btnOk_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" MinWidth="80" Margin="4" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</rlw:BaseRadioLogWindow>

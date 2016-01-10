@@ -1,0 +1,7 @@
+Timestamp|Source Type|Source Name|Signal Code Type|Signaling Format|Unit Id|Agency Name|Unit Name|Radio Name|Radio Type|Personnel Name|Role Name|Description
+7/16/2014 - 13:19:50|Audio Stream|Nesconset FD/Hauppauge FD|PTT|MDC|0420|||||||PTT ID: 0420 [Pre-ID]
+7/16/2014 - 13:20:08|Audio Stream|Nesconset FD/Hauppauge FD|PTT|MDC|3841|||||||PTT ID: 3841 [Pre-ID]
+7/16/2014 - 13:20:12|Audio Stream|Nesconset FD/Hauppauge FD|PTT|MDC|0420|||||||PTT ID: 0420 [Pre-ID]
+7/16/2014 - 13:20:16|Audio Stream|Nesconset FD/Hauppauge FD|PTT|MDC|3841|||||||PTT ID: 3841 [Pre-ID]
+7/16/2014 - 13:21:54|Audio Stream|Nesconset FD/Hauppauge FD|PTT|MDC|0420|||||||PTT ID: 0420 [Pre-ID]
+7/16/2014 - 13:21:59|Audio Stream|Nesconset FD/Hauppauge FD|PTT|MDC|3841|||||||PTT ID: 3841 [Pre-ID]

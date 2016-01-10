@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{100D0D06-6D70-4169-AB15-5FEC43CF13CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RadioLog.Decoding</RootNamespace>
+    <AssemblyName>RadioLog.Decoding</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\output\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bits\BitSetBuffer.cs" />
+    <Compile Include="Bits\MessageFramer.cs" />
+    <Compile Include="Bits\SyncPatternMatcher.cs" />
+    <Compile Include="Buffer\BooleanAveragingBuffer.cs" />
+    <Compile Include="Controller\Activity\MessageDetailsProvider.cs" />
+    <Compile Include="Decode\Decoder.cs" />
+    <Compile Include="Decode\DecoderType.cs" />
+    <Compile Include="Decode\FleetSync2\Fleetsync2Decoder.cs" />
+    <Compile Include="DSP\Filter\Filters.cs" />
+    <Compile Include="DSP\Filter\FloatFIRFilter.cs" />
+    <Compile Include="DSP\Filter\FloatHalfBandFilter.cs" />
+    <Compile Include="DSP\FSK\FSK2Decoder.cs" />
+    <Compile Include="DSP\FSK\SymbolEvent.cs" />
+    <Compile Include="DSP\Slicer.cs" />
+    <Compile Include="DSP\SyncDetectListener.cs" />
+    <Compile Include="DSP\SyncDetectProvider.cs" />
+    <Compile Include="Instrument\FloatTap.cs" />
+    <Compile Include="Instrument\Instrumentable.cs" />
+    <Compile Include="Instrument\StreamTap.cs" />
+    <Compile Include="Instrument\SymbolEventTap.cs" />
+    <Compile Include="Instrument\Tap.cs" />
+    <Compile Include="Instrument\TapListener.cs" />
+    <Compile Include="Message\Message.cs" />
+    <Compile Include="Message\MessageType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sample\Broadcaster.cs" />
+    <Compile Include="Sample\Complex\ComplexSample.cs" />
+    <Compile Include="Sample\Listener.cs" />
+    <Compile Include="Sample\Real\RealSampleBroadcaster.cs" />
+    <Compile Include="Source\Source.cs" />
+    <Compile Include="Source\SourceType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RadioLog.Common\RadioLog.Common.csproj">
+      <Project>{01b7bbed-21ac-49d5-b35d-c4aae5a847b5}</Project>
+      <Name>RadioLog.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

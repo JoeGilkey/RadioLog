@@ -1,0 +1,5 @@
+Timestamp|Source Type|Source Name|Signal Code Type|Signaling Format|Unit Id|Agency Name|Unit Name|Radio Name|Radio Type|Personnel Name|Role Name|Description
+7/16/2014 - 06:47:44|Audio Stream|Nassau County Scan|PTT|MDC|2319|||||||PTT ID: 2319 [Post-ID]
+7/16/2014 - 06:48:11|Audio Stream|Nassau County Scan|PTT|MDC|2343|||||||PTT ID: 2343 [Post-ID]
+7/16/2014 - 07:00:02|Audio Stream|Nassau County Scan|PTT|MDC|2319|||||||PTT ID: 2319 [Post-ID]
+7/16/2014 - 07:00:11|Audio Stream|Nassau County Scan|PTT|MDC|2343|||||||PTT ID: 2343 [Post-ID]

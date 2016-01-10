@@ -1,0 +1,119 @@
+﻿<rlw:BaseRadioLogWindow x:Class="RadioLog.Windows.FindFeedLinksDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:rlw="clr-namespace:RadioLog.Windows"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:Behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowTransitionsEnabled="False"
+        Topmost="True"
+        Closing="BaseRadioLogWindow_Closing"
+        Title="Find Feeds" Height="540" Width="880" WindowStyle="None" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" ShowCloseButton="True" ShowMaxRestoreButton="False" ShowMinButton="False" ShowIconOnTitleBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="tcSource" Controls:TabControlHelper.IsUnderlined="True">
+            <TabItem Header="RR/Broacastify" Grid.IsSharedSizeScope="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="colRRName"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="colRRName"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="colRRName"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="colRRName"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="8" FontWeight="Bold" FontSize="14" Text="User Name:"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="8" FontWeight="Bold" FontSize="14" Text="Password:"/>
+                    <TextBlock Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="8" FontWeight="Bold" FontSize="14" Text="Filter:"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="8" FontWeight="Bold" FontSize="14" Text="Country:"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="8" FontWeight="Bold" FontSize="14" Text="State:"/>
+                    <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="8" FontWeight="Bold" FontSize="14" Text="County:"/>
+                    <TextBlock Grid.Row="1" Grid.Column="6" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="8" FontWeight="Bold" FontSize="14" Text="Genre:"/>
+
+                    <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" x:Name="tbRRUserName"/>
+                    <PasswordBox Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" x:Name="tbRRPassword"/>
+                    <TextBox Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" x:Name="tbRRFilter" KeyUp="tbRRFilter_KeyUp"/>
+                    <ComboBox IsEnabled="False" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" DisplayMemberPath="ItemName" SelectedValuePath="ItemId" x:Name="cbCountries" DropDownOpened="cbCountries_DropDownOpened" SelectionChanged="cbCountries_SelectionChanged"/>
+                    <ComboBox IsEnabled="False" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" DisplayMemberPath="ItemName" SelectedValuePath="ItemId" x:Name="cbStates" SelectionChanged="cbStates_SelectionChanged"/>
+                    <ComboBox IsEnabled="False" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" DisplayMemberPath="ItemName" SelectedValuePath="ItemId" x:Name="cbCounties" SelectionChanged="cbCounties_SelectionChanged"/>
+                    <ComboBox IsEnabled="False" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" FontSize="12" DisplayMemberPath="Name" SelectedValuePath="Value" x:Name="cbGenre"/>
+
+                    <Button Grid.Row="0" Grid.RowSpan="4" Grid.Column="8" VerticalAlignment="Stretch" FontWeight="Bold" FontSize="16" MinWidth="80" Margin="8" Click="btnRRSearchClick">Search</Button>
+
+                    <TextBlock x:Name="tbErrorMsg" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Stretch" TextAlignment="Center" Margin="8" Visibility="Collapsed" Foreground="Red" Text="*** PLEASE NOTE: A Premium RadioReference Account is required to use this search! ***"/>
+                    
+                    <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="8" HorizontalAlignment="Stretch" TextAlignment="Center" Margin="8" Text="*** PLEASE NOTE: A Premium RadioReference Account is required to use this search! ***"/>
+
+                    <DataGrid x:Name="dgRRFeeds" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Feed Name" Binding="{Binding FeedName, Mode=OneWay}" Width="Auto" MinWidth="420"/>
+                            <DataGridTextColumn Header="Genre" Binding="{Binding Genre, Mode=OneWay}" Width="Auto"/>
+                            <DataGridTemplateColumn Width="*"/>
+                            <DataGridTemplateColumn Header="" MinWidth="120" CanUserResize="False">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="2" Tag="{Binding}" Click="btnAddRRFeed_Click">
+                                            <TextBlock Grid.Row="0" Margin="6,0" Text="Add Feed" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Web Page Search">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="tbURL" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="8"/>
+                    <Button x:Name="btnFind" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="8" Click="btnFind_Click">Find</Button>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" TextAlignment="Center" Text="*** PLEASE NOTE: The links displayed below do not contain any feeds you already have setup! ***"/>
+                    <DataGrid x:Name="dgFeeds" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Feed URL" Binding="{Binding FeedURL, Mode=OneWay}" Width="580"/>
+                            <DataGridTemplateColumn Header="" MinWidth="120" CanUserResize="False">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="2" Tag="{Binding}" Click="btnAddFeed_Click">
+                                            <TextBlock Grid.Row="0" Margin="6,0" Text="Add Feed" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <TextBlock x:Name="tbStatus" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" TextAlignment="Center" Text="Please enter the URL of the web page..."/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="8">
+            <ProgressBar x:Name="pbProcessing" Width="200" IsIndeterminate="True" Visibility="Collapsed"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="8">
+            <Button x:Name="btnOk" Content="Close" MinWidth="80" Margin="4" Click="btnOk_Click"/>
+        </StackPanel>
+    </Grid>
+</rlw:BaseRadioLogWindow>

@@ -1,0 +1,4 @@
+Timestamp|Source Type|Source Name|Signal Code Type|Signaling Format|Unit Id|Agency Name|Unit Name|Radio Name|Radio Type|Personnel Name|Role Name|Description
+7/16/2014 - 12:03:38|Audio Stream|Suffolk County Scan|PTT|MDC|0159|||||||PTT ID: 0159 [Pre-ID]
+7/16/2014 - 12:03:45|Audio Stream|Suffolk County Scan|PTT|MDC|5811|||||||PTT ID: 5811 [Pre-ID]
+7/16/2014 - 12:03:52|Audio Stream|Suffolk County Scan|PTT|MDC|5811|||||||PTT ID: 5811 [Pre-ID]

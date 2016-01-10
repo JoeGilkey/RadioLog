@@ -1,0 +1,51 @@
+<RadioInfoConfig>
+  <Agencies>
+    <Agency AgencyId="9c2441e5-559b-405d-bdae-b16472713385" AgencyName="Clever Devices" />
+  </Agencies>
+  <Units>
+    <Unit UnitKeyId="5341ef43-9149-479b-8807-2b15ef64467b" AgencyId="9c2441e5-559b-405d-bdae-b16472713385" UnitName="TEST UNIT" />
+  </Units>
+  <Radios>
+    <Radio RadioKeyId="c55bd2b8-1640-4b63-b442-91284e2f692a" SignalingFormat="MDC" SignalingUnitId="1B30" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="5f86c0ed-e9c2-48e4-b1fd-a2d7b91255d5" SignalingFormat="MDC" SignalingUnitId="5500" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="6390ef41-25e7-47ab-b373-d4b2fe0e43dd" SignalingFormat="MDC" SignalingUnitId="7011" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="3e32246f-ce2f-4acd-84fe-8e5d0df6c5dc" SignalingFormat="MDC" SignalingUnitId="1680" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="64713fb9-87e1-4b3d-8b45-0b4a73d2e8d6" SignalingFormat="MDC" SignalingUnitId="1620" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="079485af-baba-4992-8862-4af521b04096" SignalingFormat="MDC" SignalingUnitId="2103" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="4445182f-14e5-4cea-b879-96251499f242" SignalingFormat="MDC" SignalingUnitId="0937" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="004f91c7-89bd-4bdd-a227-07a072cd45e4" SignalingFormat="MDC" SignalingUnitId="1617" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="21cf9e92-9f02-4683-9259-7e2256226f16" SignalingFormat="MDC" SignalingUnitId="2319" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="219fb91c-6cb6-4ea3-aaee-36ec4b43cbc2" SignalingFormat="MDC" SignalingUnitId="5903" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="019cfc0d-6f1e-46ea-b2bc-00593e2de1a4" SignalingFormat="MDC" SignalingUnitId="0292" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="3750d1eb-16eb-4e70-beba-dfe5c8478b11" SignalingFormat="MDC" SignalingUnitId="A480" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="e0ec3bae-667c-4d6b-830d-4479b45cf9e8" SignalingFormat="MDC" SignalingUnitId="6201" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="293583e6-bb3c-4c37-8634-9963c92cbc86" SignalingFormat="MDC" SignalingUnitId="2800" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="15a3a7b9-23d5-49b8-8af3-1bff60cd99d5" SignalingFormat="MDC" SignalingUnitId="6299" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="1d73a0eb-a849-4c02-b6eb-7d1228aa26a1" SignalingFormat="MDC" SignalingUnitId="0211" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="893f1153-d8bc-4a0a-8a93-beba9a862920" SignalingFormat="MDC" SignalingUnitId="0216" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="761cc188-f5a6-4a99-a673-1276ca313b28" SignalingFormat="MDC" SignalingUnitId="2343" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="08bb9a70-5996-4464-af99-6b0b706a4909" SignalingFormat="MDC" SignalingUnitId="2810" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="2020f661-7c00-4aa1-8e5f-1d6db241c2cd" SignalingFormat="MDC" SignalingUnitId="810C" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="3f1e11a9-36ac-4c31-93f7-e33a5607d565" SignalingFormat="MDC" SignalingUnitId="2805" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="3e6702b3-5f42-4140-b2cf-278e15c84ffa" SignalingFormat="MDC" SignalingUnitId="4161" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="37051b19-4106-49dd-981f-1b0957af96db" SignalingFormat="MDC" SignalingUnitId="043B" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="10ab16db-7fbc-4ef4-800b-91c58ddbe4d4" SignalingFormat="MDC" SignalingUnitId="0651" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="4acf734b-bbbe-46ea-a1a5-6aed41a34b80" SignalingFormat="MDC" SignalingUnitId="8100" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="f2014191-0521-4a41-a88c-93ec6d974bfc" SignalingFormat="MDC" SignalingUnitId="1000" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="2427e531-00bc-4f1f-9a86-e42db36c910d" SignalingFormat="MDC" SignalingUnitId="1800" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="9c2c7e2b-b0e9-4ca3-8725-93eaa69f7d4e" SignalingFormat="MDC" SignalingUnitId="0652" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="1bb69a08-1eff-4b8a-b7d6-e13aa3af9389" SignalingFormat="MDC" SignalingUnitId="8101" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="6782c229-2546-4ed5-ac69-7e70b2140581" SignalingFormat="MDC" SignalingUnitId="0159" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="cc0884d1-cd61-4e5f-8e46-a9be7b93098c" SignalingFormat="MDC" SignalingUnitId="5811" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="18f3b168-0422-4459-ab9b-8cc2b0a4ad22" SignalingFormat="MDC" SignalingUnitId="9301" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="9e71e551-6298-45e2-885b-f41ecc5f7003" SignalingFormat="MDC" SignalingUnitId="9323" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="617ba41a-ca7b-4776-a84d-197dfc7a6418" SignalingFormat="MDC" SignalingUnitId="93AA" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="982948e7-b241-42fe-b1b5-16156ac54e2d" SignalingFormat="MDC" SignalingUnitId="1701" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="e6a9e37e-e291-4866-9303-727df3845928" SignalingFormat="MDC" SignalingUnitId="0420" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="7c9d1d62-7981-4a9e-aee9-ecc59bcb50ca" SignalingFormat="MDC" SignalingUnitId="5331" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="3187a251-e7e7-41cc-a4bb-af86d134fa45" SignalingFormat="MDC" SignalingUnitId="3841" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="19268b90-71ea-444a-9590-ca18985f7674" SignalingFormat="MDC" SignalingUnitId="0637" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="976899cf-11df-49fb-adb5-abbac093b3f2" SignalingFormat="MDC" SignalingUnitId="0639" RadioName="" RoleName="" PersonnelName="" />
+    <Radio RadioKeyId="2c9ab7b9-f18a-4edb-aa0d-fbd581d82f37" SignalingFormat="MDC" SignalingUnitId="3302" RadioName="" RoleName="" PersonnelName="" />
+  </Radios>
+</RadioInfoConfig>

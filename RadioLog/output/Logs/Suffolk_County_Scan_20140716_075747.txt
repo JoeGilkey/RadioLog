@@ -1,0 +1,2 @@
+Timestamp|Source Type|Source Name|Signal Code Type|Signaling Format|Unit Id|Agency Name|Unit Name|Radio Name|Radio Type|Personnel Name|Role Name|Description
+7/16/2014 - 08:02:28|Audio Stream|Suffolk County Scan|PTT|MDC|1617|||||||PTT ID: 1617 [Post-ID]

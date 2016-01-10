@@ -1,0 +1,112 @@
+﻿<rlw:BaseRadioLogWindow x:Class="RadioLog.Windows.RollCallView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rlw="clr-namespace:RadioLog.Windows"
+        xmlns:local="clr-namespace:RadioLog"
+        xmlns:views="clr-namespace:RadioLog.Views"
+        xmlns:cc="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        WindowTransitionsEnabled="False"
+        Title="Roll Call" Height="300" Width="480">
+    <Window.Resources>
+        <DataTemplate x:Key="RollCallInfoDT">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Border x:Name="Border"
+								 Background="DarkGray"
+								 BorderThickness="0,1,0,0"
+								 BorderBrush="{DynamicResource AccentColorBrush}"
+								 Margin="0,5"
+                                 Padding="8,1"
+                                 MinWidth="210"
+                                 VerticalAlignment="Stretch">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="tbDisplayName" Grid.Row="0" Text="{Binding DisplayName}" Foreground="White" VerticalAlignment="Stretch" FontWeight="Bold" FontSize="20"/>
+                    </Grid>
+                </Border>
+                <Button VerticalAlignment="Stretch" Grid.Column="1" Margin="5" Tag="{Binding}" Click="btnRemoveFromRollcallClick">
+                    <Grid>
+                        <Grid.Background>
+                            <SolidColorBrush Color="#FFa60800" />
+                        </Grid.Background>
+                        <Path Grid.Column="1" Margin="6" Height="16" Width="16" Fill="{DynamicResource MetroHeadingColorDark}" Data="{DynamicResource PathClose}" Stretch="Fill"/>
+                    </Grid>
+                </Button>
+            </Grid>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding EmergencyState}" Value="EmergencyActive">
+                    <Setter TargetName="Border" Property="Background">
+                        <Setter.Value>
+                            <SolidColorBrush Color="Red"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter TargetName="tbDisplayName" Property="Foreground" Value="{DynamicResource MetroHeadingColorDark}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding EmergencyState}" Value="EmergencyCleared">
+                    <Setter TargetName="Border" Property="Background">
+                        <Setter.Value>
+                            <SolidColorBrush Color="Orange"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter TargetName="tbDisplayName" Property="Foreground" Value="Black"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="mainContent" Margin="0" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="4" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Fill="{DynamicResource AccentColorBrush}"/>
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Left"></StackPanel>
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btnClearAll" HorizontalAlignment="Stretch" Margin="2,1,6,1" Background="#FFa60800" Click="btnClearAll_Click">
+                    <TextBlock Margin="20,6" Text="CLEAR" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button x:Name="btnAddToRollCall" HorizontalAlignment="Stretch" Margin="2,1" Click="btnAddToRollCall_Click">
+                    <TextBlock Margin="20,6" Text="ADD" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button x:Name="btnRestartRollCall" HorizontalAlignment="Stretch" Margin="2,1" Click="btnRestartRollCall_Click">
+                        <TextBlock Margin="20,6" Text="RESTART ROLLCALL" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+            </StackPanel>
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="10,6,10,6" Text="WAITING" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="1" Margin="10,6,10,6" Text="GOOD" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <cc:DragDropProviderListBox x:Name="lbWaiting" Grid.Row="2" Grid.Column="0" ItemTemplate="{StaticResource RollCallInfoDT}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" AllowDrop="True" DragOver="ListBox_DragOver" Drop="lbWaiting_Drop" MouseDoubleClick="lbWaiting_MouseDoubleClick">
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                </ListBox.Resources>
+            </cc:DragDropProviderListBox>
+            <cc:DragDropProviderListBox x:Name="lbGood" Grid.Row="2" Grid.Column="2" ItemTemplate="{StaticResource RollCallInfoDT}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" AllowDrop="True" DragOver="ListBox_DragOver" Drop="lbGood_Drop" MouseDoubleClick="lbGood_MouseDoubleClick">
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                </ListBox.Resources>
+            </cc:DragDropProviderListBox>
+        </Grid>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="btnOk" Width="120" Margin="4" Click="btnOk_Click">
+                <TextBlock Text="OK" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</rlw:BaseRadioLogWindow>

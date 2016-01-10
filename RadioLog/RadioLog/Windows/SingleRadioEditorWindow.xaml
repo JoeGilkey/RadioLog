@@ -1,0 +1,104 @@
+﻿<rlw:BaseRadioLogWindow x:Class="RadioLog.Windows.SingleRadioEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rlw="clr-namespace:RadioLog.Windows"
+        Title="Radio" Height="600" Width="520">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.IsSharedSizeScope="True">
+            <Grid Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="4" Text="Signaling Type:"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="4" Text="{Binding SignalingFormat}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="4" Text="Signaling ID:"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="4" Text="{Binding SignalingUnitId}"/>
+            </Grid>
+            <Grid Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="4" Text="Radio Name:"/>
+                <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" Text="{Binding RadioName}"/>
+            </Grid>
+            <Grid Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="4" Text="Role Name:"/>
+                <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" Text="{Binding RoleName}"/>
+            </Grid>
+            <Grid Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="4" Text="Personnel Name:"/>
+                <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4" Text="{Binding PersonnelName}"/>
+            </Grid>
+            <Grid Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="4" Text="Radio Type:"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding RadioTypes}" DisplayMemberPath="RadioTypeName" SelectedValuePath="RadioType" SelectedValue="{Binding RadioType}"/>
+            </Grid>
+            <Grid Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="4" Text="Agency:"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Agencies}" DisplayMemberPath="AgencyName" SelectedValuePath="AgencyId" SelectedValue="{Binding AgencyId}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="{Binding AgencyNameEnabled}" Text="{Binding AgencyName}"/>
+            </Grid>
+            <Grid Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="colName"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="4" Text="Unit:"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Units}" DisplayMemberPath="UnitName" SelectedValuePath="UnitId" SelectedValue="{Binding UnitId}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="{Binding UnitNameEnabled}" Text="{Binding UnitName}"/>
+            </Grid>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="8">
+            <Button x:Name="btnOk" Content="OK" MinWidth="80" Margin="4" IsDefault="True" Click="btnOk_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" MinWidth="80" Margin="4" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</rlw:BaseRadioLogWindow>

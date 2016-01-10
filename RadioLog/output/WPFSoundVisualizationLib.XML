@@ -1,0 +1,1397 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WPFSoundVisualizationLib</name>
+    </assembly>
+    <members>
+        <member name="T:WPFSoundVisualizationLib.AlbumArtDisplay">
+            <summary>
+            Displays album cover artwork
+            with a CD Jewel Case overlay.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.AlbumArtDisplay.AlbumArtImageProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.AlbumArtDisplay.AlbumArtImage"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.AlbumArtDisplay.OnCoerceAlbumArtImage(System.Windows.Media.ImageSource)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.AlbumArtDisplay.AlbumArtImage"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.AlbumArtDisplay.AlbumArtImage"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.AlbumArtDisplay.AlbumArtImage"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.AlbumArtDisplay.OnAlbumArtImageChanged(System.Windows.Media.ImageSource,System.Windows.Media.ImageSource)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.AlbumArtDisplay.AlbumArtImage"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.AlbumArtDisplay.AlbumArtImage"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.AlbumArtDisplay.AlbumArtImage"/></param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.AlbumArtDisplay.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes call System.Windows.FrameworkElement.ApplyTemplate().
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.AlbumArtDisplay.AlbumArtImage">
+            <summary>
+            Gets or sets the image to display in the CD jewel case as the album art cover. If this value
+            is set to null, the CD sleeve will appear empty and show an unlabeled disc instead.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.DigitalClock">
+            <summary>
+            A digital LED clock display control with 
+            hours, minutes, seconds, and hundredths of a second.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.DigitalClock.TimeProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.DigitalClock.Time"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.DigitalClock.OnCoerceTime(System.TimeSpan)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.Time"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.DigitalClock.Time"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.Time"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.DigitalClock.OnTimeChanged(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.DigitalClock.Time"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.Time"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.Time"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.DigitalClock.ShowHoursProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowHours"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.DigitalClock.OnCoerceShowHours(System.Boolean)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowHours"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowHours"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowHours"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.DigitalClock.OnShowHoursChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowHours"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowHours"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowHours"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.DigitalClock.ShowSubSecondsProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowSubSeconds"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.DigitalClock.OnCoerceShowSubSeconds(System.Boolean)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowSubSeconds"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowSubSeconds"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowSubSeconds"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.DigitalClock.OnShowSubSecondsChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowSubSeconds"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowSubSeconds"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.DigitalClock.ShowSubSeconds"/></param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.DigitalClock.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes call System.Windows.FrameworkElement.ApplyTemplate().
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.DigitalClock.OnTemplateChanged(System.Windows.Controls.ControlTemplate,System.Windows.Controls.ControlTemplate)">
+            <summary>
+            Called whenever the control's template changes. 
+            </summary>
+            <param name="oldTemplate">The old template</param>
+            <param name="newTemplate">The new template</param>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.DigitalClock.Time">
+            <summary>
+            Gets or sets the time to be displayed in the Digital Clock.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.DigitalClock.ShowHours">
+            <summary>
+            Gets or sets whether the digital clock will show the hours portion
+            in the digital clock display. This is useful if the times displayed
+            are always less than an hour.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.DigitalClock.ShowSubSeconds">
+            <summary>
+            Gets or sets whether fractions of a second are displayed in the digital
+            clock display.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.Equalizer">
+            <summary>
+            A control that displays and edits banded frequency amplification.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.Equalizer.EqualizerValuesProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.Equalizer.EqualizerValues"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.Equalizer.OnCoerceEqualizerValues(System.Single[])">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.Equalizer.EqualizerValues"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.Equalizer.EqualizerValues"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.Equalizer.EqualizerValues"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.Equalizer.OnEqualizerValuesChanged(System.Single[],System.Single[])">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.Equalizer.EqualizerValues"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.Equalizer.EqualizerValues"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.Equalizer.EqualizerValues"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.Equalizer.NumberOfBandsProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.Equalizer.NumberOfBands"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.Equalizer.OnCoerceNumberOfBands(System.Int32)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.Equalizer.NumberOfBands"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.Equalizer.NumberOfBands"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.Equalizer.NumberOfBands"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.Equalizer.OnNumberOfBandsChanged(System.Int32,System.Int32)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.Equalizer.NumberOfBands"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.Equalizer.NumberOfBands"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.Equalizer.NumberOfBands"/></param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.Equalizer.#ctor">
+            <summary>
+            Creates an instance of Equalizer.
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.Equalizer.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes call System.Windows.FrameworkElement.ApplyTemplate().
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.Equalizer.OnTemplateChanged(System.Windows.Controls.ControlTemplate,System.Windows.Controls.ControlTemplate)">
+            <summary>
+            Called whenever the control's template changes. 
+            </summary>
+            <param name="oldTemplate">The old template</param>
+            <param name="newTemplate">The new template</param>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.Equalizer.EqualizerValues">
+            <summary>
+            Gets or sets the values of each equalizer band.
+            </summary>
+            <remarks>The number of elements in the EqualizerValues array must be equal to the number of bands. If not, all values will be set to zero.</remarks>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.Equalizer.NumberOfBands">
+            <summary>
+            Gets or sets the number of bands that the equalizer will display.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.FFTDataSize">
+            <summary>
+            The various FFT dataset sizes that can be used for processing. Note that
+            when a control requires an array of real intensity results, the array will
+            be half the size specified here.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.FFTDataSize.FFT256">
+            <summary>
+            A 256 point FFT. Real data will be 128 floating point values.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.FFTDataSize.FFT512">
+            <summary>
+            A 512 point FFT. Real data will be 256 floating point values.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.FFTDataSize.FFT1024">
+            <summary>
+            A 1024 point FFT. Real data will be 512 floating point values.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.FFTDataSize.FFT2048">
+            <summary>
+            A 2048 point FFT. Real data will be 1024 floating point values.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.FFTDataSize.FFT4096">
+            <summary>
+            A 4096 point FFT. Real data will be 2048 floating point values.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.FFTDataSize.FFT8192">
+            <summary>
+            A 8192 point FFT. Real data will be 4096 floating point values.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.FFTDataSize.FFT16384">
+            <summary>
+            A 16384 point FFT. Real data will be 8192 floating point values.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.ISoundPlayer">
+            <summary>
+            Provides access to functionality that is common
+            across all sound players.
+            </summary>
+            <seealso cref="T:WPFSoundVisualizationLib.IWaveformPlayer"/>
+            <seealso cref="T:WPFSoundVisualizationLib.ISpectrumPlayer"/>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.ISoundPlayer.IsPlaying">
+            <summary>
+            Gets whether the sound player is currently playing audio.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.BarHeightScalingStyles">
+            <summary>
+            The different ways that the bar height can be scaled by the spectrum analyzer.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.BarHeightScalingStyles.Decibel">
+            <summary>
+            A decibel scale. Formula: 20 * Log10(FFTValue). Total bar height
+            is scaled from -90 to 0 dB.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.BarHeightScalingStyles.Sqrt">
+            <summary>
+            A non-linear squareroot scale. Formula: Sqrt(FFTValue) * 2 * BarHeight.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.BarHeightScalingStyles.Linear">
+            <summary>
+            A linear scale. Formula: 9 * FFTValue * BarHeight.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.ISpectrumPlayer">
+            <summary>
+            Provides access to sound player functionality needed to
+            render a spectrum analyzer.
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.ISpectrumPlayer.GetFFTData(System.Single[])">
+            <summary>
+            Assigns current FFT data to a buffer.
+            </summary>
+            <remarks>
+            The FFT data in the buffer should consist only of the real number intensity values. This means that if your FFT algorithm returns
+            complex numbers (as many do), you'd run an algorithm similar to:
+            for(int i = 0; i &lt; complexNumbers.Length / 2; i++)
+                fftResult[i] = Math.Sqrt(complexNumbers[i].Real * complexNumbers[i].Real + complexNumbers[i].Imaginary * complexNumbers[i].Imaginary);
+            </remarks>
+            <param name="fftDataBuffer">The buffer to copy FFT data. The buffer should consist of only non-imaginary numbers.</param>
+            <returns>True if data was written to the buffer, otherwise false.</returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.ISpectrumPlayer.GetFFTFrequencyIndex(System.Int32)">
+            <summary>
+            Gets the index in the FFT data buffer for a given frequency.
+            </summary>
+            <param name="frequency">The frequency for which to obtain a buffer index</param>
+            <returns>An index in the FFT data buffer</returns>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.SpectrumAnalyzer">
+            <summary>
+            A spectrum analyzer control for visualizing audio level and frequency data.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.MaximumFrequencyProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MaximumFrequency"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceMaximumFrequency(System.Int32)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MaximumFrequency"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MaximumFrequency"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MaximumFrequency"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnMaximumFrequencyChanged(System.Int32,System.Int32)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MaximumFrequency"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MaximumFrequency"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MaximumFrequency"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.MinimumFrequencyProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MinimumFrequency"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceMinimumFrequency(System.Int32)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MinimumFrequency"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MinimumFrequency"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MinimumFrequency"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnMinimumFrequencyChanged(System.Int32,System.Int32)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MinimumFrequency"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MinimumFrequency"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MinimumFrequency"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.BarCountProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarCount"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceBarCount(System.Int32)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarCount"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarCount"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarCount"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnBarCountChanged(System.Int32,System.Int32)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarCount"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarCount"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarCount"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.BarSpacingProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarSpacing"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceBarSpacing(System.Double)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarSpacing"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarSpacing"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarSpacing"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnBarSpacingChanged(System.Double,System.Double)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarSpacing"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarSpacing"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarSpacing"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakFallDelayProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakFallDelay"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoercePeakFallDelay(System.Int32)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakFallDelay"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakFallDelay"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakFallDelay"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnPeakFallDelayChanged(System.Int32,System.Int32)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakFallDelay"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakFallDelay"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakFallDelay"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.IsFrequencyScaleLinearProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.IsFrequencyScaleLinear"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceIsFrequencyScaleLinear(System.Boolean)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.IsFrequencyScaleLinear"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.IsFrequencyScaleLinear"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.IsFrequencyScaleLinear"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnIsFrequencyScaleLinearChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.IsFrequencyScaleLinear"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.IsFrequencyScaleLinear"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.IsFrequencyScaleLinear"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.BarHeightScalingProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarHeightScaling"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceBarHeightScaling(WPFSoundVisualizationLib.BarHeightScalingStyles)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarHeightScaling"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarHeightScaling"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarHeightScaling"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnBarHeightScalingChanged(WPFSoundVisualizationLib.BarHeightScalingStyles,WPFSoundVisualizationLib.BarHeightScalingStyles)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarHeightScaling"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarHeightScaling"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarHeightScaling"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.AveragePeaksProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.AveragePeaks"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceAveragePeaks(System.Boolean)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.AveragePeaks"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.AveragePeaks"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.AveragePeaks"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnAveragePeaksChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.AveragePeaks"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.AveragePeaks"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.AveragePeaks"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.BarStyleProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarStyle"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceBarStyle(System.Windows.Style)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarStyle"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarStyle"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarStyle"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnBarStyleChanged(System.Windows.Style,System.Windows.Style)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarStyle"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarStyle"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarStyle"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakStyleProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakStyle"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoercePeakStyle(System.Windows.Style)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakStyle"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakStyle"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakStyle"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnPeakStyleChanged(System.Windows.Style,System.Windows.Style)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakStyle"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakStyle"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakStyle"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.ActualBarWidthProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.ActualBarWidth"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceActualBarWidth(System.Double)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.ActualBarWidth"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.ActualBarWidth"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.ActualBarWidth"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnActualBarWidthChanged(System.Double,System.Double)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.ActualBarWidth"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.ActualBarWidth"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.ActualBarWidth"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.RefreshIntervalProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.RefreshInterval"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceRefreshInterval(System.Int32)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.RefreshInterval"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.RefreshInterval"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.RefreshInterval"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnRefreshIntervalChanged(System.Int32,System.Int32)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.RefreshInterval"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.RefreshInterval"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.RefreshInterval"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.SpectrumAnalyzer.FFTComplexityProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.FFTComplexity"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnCoerceFFTComplexity(WPFSoundVisualizationLib.FFTDataSize)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.FFTComplexity"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.FFTComplexity"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.FFTComplexity"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnFFTComplexityChanged(WPFSoundVisualizationLib.FFTDataSize,WPFSoundVisualizationLib.FFTDataSize)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.FFTComplexity"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.FFTComplexity"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.SpectrumAnalyzer.FFTComplexity"/></param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes call System.Windows.FrameworkElement.ApplyTemplate().
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnTemplateChanged(System.Windows.Controls.ControlTemplate,System.Windows.Controls.ControlTemplate)">
+            <summary>
+            Called whenever the control's template changes. 
+            </summary>
+            <param name="oldTemplate">The old template</param>
+            <param name="newTemplate">The new template</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WPFSoundVisualizationLib.SpectrumAnalyzer"/> class.
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.RegisterSoundPlayer(WPFSoundVisualizationLib.ISpectrumPlayer)">
+            <summary>
+            Register a sound player from which the spectrum analyzer
+            can get the necessary playback data.
+            </summary>
+            <param name="soundPlayer">A sound player that provides spectrum data through the ISpectrumPlayer interface methods.</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnRender(System.Windows.Media.DrawingContext)">
+            <summary>
+            When overridden in a derived class, participates in rendering operations that are directed by the layout system. 
+            The rendering instructions for this element are not used directly when this method is invoked, and are 
+            instead preserved for later asynchronous use by layout and drawing.
+            </summary>
+            <param name="dc">The drawing instructions for a specific element. This context is provided to the layout system.</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.SpectrumAnalyzer.OnRenderSizeChanged(System.Windows.SizeChangedInfo)">
+            <summary>
+            Raises the SizeChanged event, using the specified information as part of the eventual event data.
+            </summary>
+            <param name="sizeInfo">Details of the old and new size involved in the change.</param>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MaximumFrequency">
+            <summary>
+            Gets or sets the maximum display frequency (right side) for the spectrum analyzer.
+            </summary>
+            <remarks>In usual practice, this value should be somewhere between 0 and half of the maximum sample rate. If using
+            the maximum sample rate, this would be roughly 22000.</remarks>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.MinimumFrequency">
+            <summary>
+            Gets or sets the minimum display frequency (left side) for the spectrum analyzer.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarCount">
+            <summary>
+            Gets or sets the number of bars to show on the sprectrum analyzer.
+            </summary>
+            <remarks>A bar's width can be a minimum of 1 pixel. If the BarSpacing and BarCount property result
+            in the bars being wider than the chart itself, the BarCount will automatically scale down.</remarks>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarSpacing">
+            <summary>
+            Gets or sets the spacing between the bars.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakFallDelay">
+            <summary>
+            Gets or sets the delay factor for the peaks falling.
+            </summary>
+            <remarks>
+            The delay is relative to the refresh rate of the chart.
+            </remarks>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.IsFrequencyScaleLinear">
+            <summary>
+            Gets or sets a value indicating whether the bars are layed out on a linear scale horizontally.
+            </summary>
+            <remarks>
+            If true, the bars will represent frequency buckets on a linear scale (making them all
+            have equal band widths on the frequency scale). Otherwise, the bars will be layed out
+            on a logrithmic scale, with each bar having a larger bandwidth than the one previous.
+            </remarks>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarHeightScaling">
+            <summary>
+            Gets or sets a value indicating to what scale the bar heights are drawn.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.AveragePeaks">
+            <summary>
+            Gets or sets a value indicating whether each bar's peak 
+            value will be averaged with the previous bar's peak.
+            This creates a smoothing effect on the bars.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.BarStyle">
+            <summary>
+            Gets or sets a style with which to draw the bars on the spectrum analyzer.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.PeakStyle">
+            <summary>
+            Gets or sets a style with which to draw the falling peaks on the spectrum analyzer.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.ActualBarWidth">
+            <summary>
+            Gets the actual width that the bars will be drawn at.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.RefreshInterval">
+            <summary>
+            Gets or sets the refresh interval, in milliseconds, of the Spectrum Analyzer.
+            </summary>
+            <remarks>
+            The valid range of the interval is 10 milliseconds to 1000 milliseconds.
+            </remarks>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.SpectrumAnalyzer.FFTComplexity">
+            <summary>
+            Gets or sets the complexity of FFT results the Spectrum Analyzer expects. Larger values
+            will be more accurate at converting time domain data to frequency data, but slower.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.TimeEditor">
+            <summary>
+            A control that allows the user to
+            see and edit TimeSpans.
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.#ctor">
+            <summary>
+            Creates an instance of TimeEditor
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes call System.Windows.FrameworkElement.ApplyTemplate().
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnTemplateChanged(System.Windows.Controls.ControlTemplate,System.Windows.Controls.ControlTemplate)">
+            <summary>
+            Called whenever the control's template changes. 
+            </summary>
+            <param name="oldTemplate">The old template</param>
+            <param name="newTemplate">The new template</param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.IsReadOnlyProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.TimeEditor.IsReadOnly"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCoerceIsReadOnly(System.Boolean)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.IsReadOnly"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.TimeEditor.IsReadOnly"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.IsReadOnly"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnIsReadOnlyChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.TimeEditor.IsReadOnly"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.IsReadOnly"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.IsReadOnly"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.MinimumProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minimum"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCoerceMinimum(System.TimeSpan)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minimum"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minimum"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minimum"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnMinimumChanged(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minimum"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minimum"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minimum"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.MaximumProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Maximum"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCoerceMaximum(System.TimeSpan)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Maximum"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.TimeEditor.Maximum"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Maximum"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnMaximumChanged(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Maximum"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Maximum"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Maximum"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.ValueProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Value"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCoerceValue(System.TimeSpan)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Value"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.TimeEditor.Value"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Value"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnValueChanged(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Value"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Value"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Value"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.HoursProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Hours"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCoerceHours(System.Int32)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Hours"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.TimeEditor.Hours"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Hours"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnHoursChanged(System.Int32,System.Int32)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Hours"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Hours"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Hours"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.MinutesProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minutes"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCoerceMinutes(System.Int32)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minutes"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minutes"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minutes"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnMinutesChanged(System.Int32,System.Int32)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minutes"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minutes"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minutes"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.SecondsProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Seconds"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCoerceSeconds(System.Double)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Seconds"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.TimeEditor.Seconds"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Seconds"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnSecondsChanged(System.Double,System.Double)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Seconds"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Seconds"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.Seconds"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.CaretBrushProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.TimeEditor.CaretBrush"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCoerceCaretBrush(System.Windows.Media.Brush)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.CaretBrush"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.TimeEditor.CaretBrush"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.CaretBrush"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCaretBrushChanged(System.Windows.Media.Brush,System.Windows.Media.Brush)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.TimeEditor.CaretBrush"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.CaretBrush"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.CaretBrush"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.NeedsHourProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.TimeEditor.NeedsHour"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnCoerceNeedsHour(System.Boolean)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.NeedsHour"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.TimeEditor.NeedsHour"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.NeedsHour"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnNeedsHourChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.TimeEditor.NeedsHour"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.NeedsHour"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.TimeEditor.NeedsHour"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditor.EditingEvent">
+            <summary>
+            Identifies the <see cref="E:WPFSoundVisualizationLib.TimeEditor.Editing"/> routed event.
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditor.OnGotFocus(System.Windows.RoutedEventArgs)">
+            <summary>
+            Invoked whenever an unhandled System.Windows.UIElement.GotFocus event reaches
+            this element in its route.
+            </summary>
+            <param name="e">The System.Windows.RoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditor.IsReadOnly">
+            <summary>
+            Gets or sets whether the TimeEditor is readonly
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditor.Minimum">
+            <summary>
+            Gets or sets the minimum value that is allowed by the TimeEditor
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditor.Maximum">
+            <summary>
+            Gets or sets the maximum value that is allowed by the TimeEditor
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditor.Value">
+            <summary>
+            Gets or sets the value of the TimeEditor
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditor.Hours">
+            <summary>
+            Gets or sets just the hours portion of the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Value"/>
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditor.Minutes">
+            <summary>
+            Gets or sets just the hours portion of the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Minutes"/>
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditor.Seconds">
+            <summary>
+            Gets or sets just the seconds portion of the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Value"/>
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditor.CaretBrush">
+            <summary>
+            Gets or sets the brush used by the caret in text fields.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditor.NeedsHour">
+            <summary>
+            Gets whether the <see cref="P:WPFSoundVisualizationLib.TimeEditor.Maximum"/> value is greater than the 1 hour
+            to indicate whether the hour field needs to be displayed.
+            </summary>
+        </member>
+        <member name="E:WPFSoundVisualizationLib.TimeEditor.Editing">
+            <summary>
+            Occurs when the time editor's values are being edited.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.TimeEditorAction">
+            <summary>
+            An action performed on a TimeEditor.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditorAction.None">
+            <summary>
+            No action performed
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditorAction.UpPressed">
+            <summary>
+            Up button pressed.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditorAction.DownPressed">
+            <summary>
+            Down button pressed
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditorAction.ValueEntered">
+            <summary>
+            A field value was entered.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.TimeEditorEventArgs">
+            <summary>
+            Provides data for the time editor change events. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditorEventArgs.#ctor(WPFSoundVisualizationLib.TimeEditorAction,WPFSoundVisualizationLib.TimeEditorField)">
+            <summary>
+            Initializes a new instance of the TimeEditorEventArgs class.
+            </summary>
+            <param name="action">The action performed on the TimeEditor</param>
+            <param name="activeField">The field on which the action was performed.</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditorEventArgs.#ctor(System.Windows.RoutedEvent,WPFSoundVisualizationLib.TimeEditorAction,WPFSoundVisualizationLib.TimeEditorField)">
+            <summary>
+            Initializes a new instance of the TimeEditorEventArgs class, using the supplied routed event identifier.
+            </summary>
+            <param name="routedEvent">The routed event identifier for this instance of the RoutedEventArgs class.</param>
+            <param name="action">The action performed on the TimeEditor</param>
+            <param name="activeField">The field on which the action was performed.</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.TimeEditorEventArgs.#ctor(System.Windows.RoutedEvent,System.Object,WPFSoundVisualizationLib.TimeEditorAction,WPFSoundVisualizationLib.TimeEditorField)">
+            <summary>
+            Initializes a new instance of the TimeEditorEventArgs class, using the supplied routed event identifier, and
+            providing the opportunity to declar a different source for the event.
+            </summary>
+            <param name="routedEvent">The routed event identifier for this instance of the RoutedEventArgs class.</param>
+            <param name="source">An alternate source that will be reported when the event is handled. This
+            pre-populates the RoutedEventArgs.Source property.</param>
+            <param name="action">The action performed on the TimeEditor</param>
+            <param name="activeField">The field on which the action was performed.</param>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditorEventArgs.Action">
+            <summary>
+            The action performed on the TimeEditor.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.TimeEditorEventArgs.ActiveField">
+            <summary>
+            The field on which the <see cref="P:WPFSoundVisualizationLib.TimeEditorEventArgs.Action"/> is performed
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.TimeEditorEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:WPFSoundVisualizationLib.TimeEditor.Editing"/>
+            routed events.
+            </summary>
+            <param name="sender">The object where the event handler is attached.</param>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.TimeEditorField">
+            <summary>
+            Fields of a TimeEditor
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditorField.None">
+            <summary>
+            No field.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditorField.Hours">
+            <summary>
+            The hours field.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditorField.Minutes">
+            <summary>
+            The minutes field.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.TimeEditorField.Seconds">
+            <summary>
+            The seconds field.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.WaveformTimeline">
+            <summary>
+            A control that displays a stereo waveform and
+            allows a user to change playback position.
+            </summary>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.LeftLevelBrushProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.LeftLevelBrush"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceLeftLevelBrush(System.Windows.Media.Brush)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.LeftLevelBrush"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.LeftLevelBrush"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.LeftLevelBrush"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnLeftLevelBrushChanged(System.Windows.Media.Brush,System.Windows.Media.Brush)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.LeftLevelBrush"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.LeftLevelBrush"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.LeftLevelBrush"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.RightLevelBrushProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RightLevelBrush"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceRightLevelBrush(System.Windows.Media.Brush)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RightLevelBrush"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RightLevelBrush"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RightLevelBrush"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnRightLevelBrushChanged(System.Windows.Media.Brush,System.Windows.Media.Brush)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RightLevelBrush"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RightLevelBrush"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RightLevelBrush"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarBrushProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarBrush"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceProgressBarBrush(System.Windows.Media.Brush)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarBrush"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarBrush"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarBrush"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnProgressBarBrushChanged(System.Windows.Media.Brush,System.Windows.Media.Brush)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarBrush"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarBrush"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarBrush"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarThicknessProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarThickness"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceProgressBarThickness(System.Double)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarThickness"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarThickness"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarThickness"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnProgressBarThicknessChanged(System.Double,System.Double)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarThickness"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarThickness"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarThickness"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.CenterLineBrushProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineBrush"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceCenterLineBrush(System.Windows.Media.Brush)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineBrush"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineBrush"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineBrush"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCenterLineBrushChanged(System.Windows.Media.Brush,System.Windows.Media.Brush)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineBrush"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineBrush"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineBrush"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.CenterLineThicknessProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineThickness"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceCenterLineThickness(System.Double)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineThickness"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineThickness"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineThickness"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCenterLineThicknessChanged(System.Double,System.Double)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineThickness"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineThickness"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineThickness"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.RepeatRegionBrushProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RepeatRegionBrush"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceRepeatRegionBrush(System.Windows.Media.Brush)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RepeatRegionBrush"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RepeatRegionBrush"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RepeatRegionBrush"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnRepeatRegionBrushChanged(System.Windows.Media.Brush,System.Windows.Media.Brush)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RepeatRegionBrush"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RepeatRegionBrush"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.RepeatRegionBrush"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.AllowRepeatRegionsProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AllowRepeatRegions"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceAllowRepeatRegions(System.Boolean)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AllowRepeatRegions"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AllowRepeatRegions"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AllowRepeatRegions"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnAllowRepeatRegionsChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AllowRepeatRegions"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AllowRepeatRegions"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AllowRepeatRegions"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.TimelineTickBrushProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.TimelineTickBrush"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceTimelineTickBrush(System.Windows.Media.Brush)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.TimelineTickBrush"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.TimelineTickBrush"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.TimelineTickBrush"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnTimelineTickBrushChanged(System.Windows.Media.Brush,System.Windows.Media.Brush)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.TimelineTickBrush"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.TimelineTickBrush"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.TimelineTickBrush"/></param>
+        </member>
+        <member name="F:WPFSoundVisualizationLib.WaveformTimeline.AutoScaleWaveformCacheProperty">
+            <summary>
+            Identifies the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AutoScaleWaveformCache"/> dependency property. 
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnCoerceAutoScaleWaveformCache(System.Boolean)">
+            <summary>
+            Coerces the value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AutoScaleWaveformCache"/> when a new value is applied.
+            </summary>
+            <param name="value">The value that was set on <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AutoScaleWaveformCache"/></param>
+            <returns>The adjusted value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AutoScaleWaveformCache"/></returns>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnAutoScaleWaveformCacheChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Called after the <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AutoScaleWaveformCache"/> value has changed.
+            </summary>
+            <param name="oldValue">The previous value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AutoScaleWaveformCache"/></param>
+            <param name="newValue">The new value of <see cref="P:WPFSoundVisualizationLib.WaveformTimeline.AutoScaleWaveformCache"/></param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes call System.Windows.FrameworkElement.ApplyTemplate().
+            </summary>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnTemplateChanged(System.Windows.Controls.ControlTemplate,System.Windows.Controls.ControlTemplate)">
+            <summary>
+            Called whenever the control's template changes. 
+            </summary>
+            <param name="oldTemplate">The old template</param>
+            <param name="newTemplate">The new template</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.RegisterSoundPlayer(WPFSoundVisualizationLib.IWaveformPlayer)">
+            <summary>
+            Register a sound player from which the waveform timeline
+            can get the necessary playback data.
+            </summary>
+            <param name="soundPlayer">A sound player that provides waveform data through the IWaveformPlayer interface methods.</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnRenderSizeChanged(System.Windows.SizeChangedInfo)">
+            <summary>
+            Raises the SizeChanged event, using the specified information as part of the eventual event data. 
+            </summary>
+            <param name="sizeInfo">Details of the old and new size involved in the change.</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Invoked when an unhandled MouseLeftButtonDown routed event is raised on this element. Implement this method to add class handling for this event.
+            </summary>
+            <param name="e">The MouseButtonEventArgs that contains the event data. The event data reports that the left mouse button was pressed.</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Invoked when an unhandled MouseLeftButtonUp routed event reaches an element in its route that is derived from this class. Implement this method to add class handling for this event.
+            </summary>
+            <param name="e">The MouseButtonEventArgs that contains the event data. The event data reports that the left mouse button was released.</param>
+        </member>
+        <member name="M:WPFSoundVisualizationLib.WaveformTimeline.OnMouseMove(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Invoked when an unhandled Mouse.MouseMove attached event reaches an element in its route that is derived from this class. Implement this method to add class handling for this event.
+            </summary>
+            <param name="e">The MouseEventArgs that contains the event data.</param>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.LeftLevelBrush">
+            <summary>
+            Gets or sets a brush used to draw the left channel output on the waveform.
+            </summary>        
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.RightLevelBrush">
+            <summary>
+            Gets or sets a brush used to draw the right speaker levels on the waveform.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarBrush">
+            <summary>
+            Gets or sets a brush used to draw the track progress indicator bar.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.ProgressBarThickness">
+            <summary>
+            Get or sets the thickness of the progress indicator bar.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineBrush">
+            <summary>
+            Gets or sets a brush used to draw the center line separating left and right levels.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.CenterLineThickness">
+            <summary>
+            Gets or sets the thickness of the center line separating left and right levels.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.RepeatRegionBrush">
+            <summary>
+            Gets or sets a brush used to draw the repeat region on the waveform.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.AllowRepeatRegions">
+            <summary>
+            Gets or sets a value that indicates whether repeat regions will be created via mouse drag across the waveform.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.TimelineTickBrush">
+            <summary>
+            Gets or sets a brush used to draw the tickmarks on the timeline.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.WaveformTimeline.AutoScaleWaveformCache">
+            <summary>
+            Gets or sets a value indicating whether the waveform should attempt to autoscale
+            its render buffer in size.
+            </summary>
+            <remarks>
+            If true, the control will attempt to set the waveform's bitmap cache
+            at a resolution based on the sum of all ScaleTransforms applied
+            in the control's visual tree heirarchy. This can make the waveform appear
+            less blurry if a ScaleTransform is applied at a higher level.
+            The only ScaleTransforms that are considered here are those that have 
+            uniform vertical and horizontal scaling (generally used to "zoom in"
+            on a window or controls).
+            </remarks>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.IWaveformPlayer">
+            <summary>
+            Provides access to sound player functionality needed to
+            generate a Waveform.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.IWaveformPlayer.ChannelPosition">
+            <summary>
+            Gets or sets the current sound streams playback position.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.IWaveformPlayer.ChannelLength">
+            <summary>
+            Gets the total channel length in seconds.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.IWaveformPlayer.WaveformData">
+            <summary>
+            Gets the raw level data for the waveform.
+            </summary>
+            <remarks>
+            Level data should be structured in an array where each sucessive index
+            alternates between left or right channel data, starting with left. Index 0
+            should be the first left level, index 1 should be the first right level, index
+            2 should be the second left level, etc.
+            </remarks>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.IWaveformPlayer.SelectionBegin">
+            <summary>
+            Gets or sets the starting time for a section of repeat/looped audio.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.IWaveformPlayer.SelectionEnd">
+            <summary>
+            Gets or sets the ending time for a section of repeat/looped audio.
+            </summary>
+        </member>
+        <member name="T:WPFSoundVisualizationLib.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:WPFSoundVisualizationLib.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
