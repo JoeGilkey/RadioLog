@@ -1,2 +1,0 @@
-Timestamp|Source Type|Source Name|Signal Code Type|Signaling Format|Unit Id|Agency Name|Unit Name|Radio Name|Radio Type|Personnel Name|Role Name|Description
-7/16/2014 - 07:27:23|Audio Stream|Nassau County Scan|PTT|MDC|3201|||||||PTT ID: 3201 [Post-ID]

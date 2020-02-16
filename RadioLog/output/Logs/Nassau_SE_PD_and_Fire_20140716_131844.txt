@@ -1,3 +1,0 @@
-Timestamp|Source Type|Source Name|Signal Code Type|Signaling Format|Unit Id|Agency Name|Unit Name|Radio Name|Radio Type|Personnel Name|Role Name|Description
-7/16/2014 - 13:20:12|Audio Stream|Nassau SE PD and Fire|PTT|MDC|0637|||||||PTT ID: 0637 [Pre-ID]
-7/16/2014 - 13:21:05|Audio Stream|Nassau SE PD and Fire|PTT|MDC|0639|||||||PTT ID: 0639 [Pre-ID]

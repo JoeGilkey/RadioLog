@@ -1,9 +1,0 @@
-Timestamp|Source Type|Source Name|Signal Code Type|Signaling Format|Unit Id|Agency Name|Unit Name|Radio Name|Radio Type|Personnel Name|Role Name|Description
-7/16/2014 - 11:55:57|Audio Stream|Nassau County Scan|PTT|MDC|0651|||||||PTT ID: 0651 [Pre-ID]
-7/16/2014 - 11:59:20|Audio Stream|Nassau County Scan|PTT|MDC|0652|||||||PTT ID: 0652 [Pre-ID]
-7/16/2014 - 11:59:23|Audio Stream|Nassau County Scan|PTT|MDC|0652|||||||PTT ID: 0652 [Pre-ID]
-7/16/2014 - 12:06:01|Audio Stream|Nassau County Scan|PTT|MDC|9301|||||||PTT ID: 9301 [Post-ID]
-7/16/2014 - 12:06:22|Audio Stream|Nassau County Scan|PTT|MDC|9323|||||||PTT ID: 9323 [Post-ID]
-7/16/2014 - 12:06:31|Audio Stream|Nassau County Scan|PTT|MDC|9301|||||||PTT ID: 9301 [Post-ID]
-7/16/2014 - 12:06:46|Audio Stream|Nassau County Scan|PTT|MDC|9301|||||||PTT ID: 9301 [Post-ID]
-7/16/2014 - 12:09:09|Audio Stream|Nassau County Scan|PTT|MDC|93AA|||||||PTT ID: 93aa [Post-ID]

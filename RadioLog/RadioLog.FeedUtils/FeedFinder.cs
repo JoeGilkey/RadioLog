@@ -143,6 +143,18 @@ namespace RadioLog.FeedUtils
                 if (Uri.TryCreate(val, UriKind.Absolute, out test))
                     return val;
             }
+
+            iLast = val.LastIndexOf(':');
+            if (iLast > 0)
+            {
+                string tmp = val.Substring(iLast + 1);
+                iLast = tmp.IndexOf('/');
+                if(iLast>0&&int.TryParse(tmp.Substring(0,iLast),out int _))
+                {
+                    //It's on a different port
+                    return val;
+                }
+            }
             return string.Empty;
         }
         private void PostProcessBroadcastifyFeeds(List<string> subLinks)
@@ -196,6 +208,7 @@ namespace RadioLog.FeedUtils
             if (htmlNode == null || string.IsNullOrWhiteSpace(htmlNode.Name))
                 return null;
             string nodeName = htmlNode.Name.ToLower().Trim();
+            if (nodeName.StartsWith("#")) return null;
             switch (nodeName)
             {
                 case "a":

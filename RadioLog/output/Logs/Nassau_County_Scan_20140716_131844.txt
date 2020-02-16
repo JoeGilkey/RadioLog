@@ -1,2 +1,0 @@
-Timestamp|Source Type|Source Name|Signal Code Type|Signaling Format|Unit Id|Agency Name|Unit Name|Radio Name|Radio Type|Personnel Name|Role Name|Description
-7/16/2014 - 13:20:12|Audio Stream|Nassau County Scan|PTT|MDC|0637|||||||PTT ID: 0637 [Pre-ID]
