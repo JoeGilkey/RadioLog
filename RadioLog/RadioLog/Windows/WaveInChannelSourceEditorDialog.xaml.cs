@@ -62,8 +62,8 @@ namespace RadioLog.Windows
             }
             nudChannelNumber.Value = _src.SourceChannel + 1;
             sRecordingKickTime.Value = _src.RecordingKickTime;
-            tsRecordingEnabled.IsChecked = _src.RecordAudio;
-            tsPriority.IsChecked = _src.IsPriority;
+            tsRecordingEnabled.IsOn = _src.RecordAudio;
+            tsPriority.IsOn = _src.IsPriority;
             cbDecodeMDC1200.IsChecked = _src.DecodeMDC1200;
             cbDecodeGEStar.IsChecked = _src.DecodeGEStar;
             cbDecodeFleetSync.IsChecked = _src.DecodeFleetSync;
@@ -149,8 +149,8 @@ namespace RadioLog.Windows
             _src.SourceLocation = _channelList[cbMultiLineIn.SelectedIndex].DeviceName;
             _src.SourceChannel = ((int)(nudChannelNumber.Value ?? 1) - 1);
             _src.RecordingKickTime = (int)(sRecordingKickTime.Value);
-            _src.RecordAudio = tsRecordingEnabled.IsChecked == true;
-            _src.IsPriority = tsPriority.IsChecked == true;
+            _src.RecordAudio = tsRecordingEnabled.IsOn == true;
+            _src.IsPriority = tsPriority.IsOn == true;
             _src.DecodeMDC1200 = cbDecodeMDC1200.IsChecked == true;
             _src.DecodeGEStar = cbDecodeGEStar.IsChecked == true;
             _src.DecodeFleetSync = cbDecodeFleetSync.IsChecked == true;

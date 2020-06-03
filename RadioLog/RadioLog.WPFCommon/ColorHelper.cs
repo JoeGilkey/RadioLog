@@ -18,23 +18,9 @@ namespace RadioLog.WPFCommon
                 if (_accentColorBrushes != null)
                     return;
                 _accentColorBrushes = new Dictionary<string, Brush>();
-                foreach (MahApps.Metro.Accent accent in MahApps.Metro.ThemeManager.Accents.OrderBy(a => a.Name))
+                foreach(var theme in ControlzEx.Theming.ThemeManager.Current.Themes)
                 {
-                    if (accent.Resources != null)
-                    {
-                        foreach (object key in accent.Resources.Keys)
-                        {
-                            string strKey = key as string;
-                            if (string.Equals("AccentColorBrush", strKey, StringComparison.InvariantCultureIgnoreCase))
-                            {
-                                Brush accentBrush = accent.Resources[key] as Brush;
-                                if (accentBrush != null)
-                                {
-                                    _accentColorBrushes[accent.Name] = accentBrush;
-                                }
-                            }
-                        }
-                    }
+                    _accentColorBrushes[theme.Name] = theme.ShowcaseBrush;
                 }
             }
             catch (Exception ex)

@@ -35,9 +35,7 @@ namespace RadioLog.ViewModels
 
         #region Theme
         private string _theme = RadioLog.Common.AppSettings.Instance.CurrentTheme;
-        private string _accent = RadioLog.Common.AppSettings.Instance.CurrentAccent;
         private ObservableCollection<ThemeListItem> _themeList = null;
-        private ObservableCollection<string> _accentList = null;
         private ObservableCollection<ModeListItem> _modeList = null;
         private ObservableCollection<DisplayStyleListItem> _displayList = null;
         private ObservableCollection<ViewSizeListItem> _viewSizeList = null;
@@ -113,10 +111,8 @@ namespace RadioLog.ViewModels
 
         private void DisplaySelectedTheme()
         {
-            MahApps.Metro.Accent accent = MahApps.Metro.ThemeManager.Accents.FirstOrDefault(a => a.Name == CurrentAccent);
-            MahApps.Metro.AppTheme theme = MahApps.Metro.ThemeManager.GetAppTheme(CurrentTheme);
-            MahApps.Metro.ThemeManager.ChangeAppStyle(App.Current, accent, theme);
-
+            ControlzEx.Theming.ThemeManager.Current.ChangeTheme(App.Current, CurrentTheme);
+            
             RadioLog.WPFCommon.AccentColorBrushConverter.CleanupBrushes();
             Cinch.Mediator.Instance.NotifyColleaguesAsync<bool>("REFRESH_VISUALS", true);
         }
@@ -126,20 +122,11 @@ namespace RadioLog.ViewModels
         {
             _viewAwareStatus = viewAwareStatus;
             _themeList = new System.Collections.ObjectModel.ObservableCollection<ThemeListItem>();
-            foreach (MahApps.Metro.AppTheme theme in MahApps.Metro.ThemeManager.AppThemes)
+            foreach (var theme in ControlzEx.Theming.ThemeManager.Current.Themes.OrderBy(t => t.DisplayName))
             {
-                string themeName = theme.Name;
-                if (themeName.StartsWith("Base"))
-                    themeName = themeName.Substring(4);
-                _themeList.Add(new ThemeListItem() { Name = themeName, Value = theme.Name });
+                _themeList.Add(new ThemeListItem() { Name = theme.DisplayName, Value = theme.Name });
             }
-
-            _accentList = new System.Collections.ObjectModel.ObservableCollection<string>();
-            foreach (MahApps.Metro.Accent accent in MahApps.Metro.ThemeManager.Accents.OrderBy(a => a.Name))
-            {
-                _accentList.Add(accent.Name);
-            }
-
+            
             _modeList = new ObservableCollection<ModeListItem>();
             _modeList.Add(new ModeListItem() { Mode = Common.RadioLogMode.Normal, ModeName = "Normal" });
             _modeList.Add(new ModeListItem() { Mode = Common.RadioLogMode.Fireground, ModeName = "Fireground" });
@@ -177,7 +164,6 @@ namespace RadioLog.ViewModels
         public void CancelChanges()
         {
             _theme = RadioLog.Common.AppSettings.Instance.CurrentTheme;
-            _accent = RadioLog.Common.AppSettings.Instance.CurrentAccent;
             _showSourceName = RadioLog.Common.AppSettings.Instance.ShowSourceName;
             _showUnitId = RadioLog.Common.AppSettings.Instance.ShowUnitId;
             _showAgencyName = RadioLog.Common.AppSettings.Instance.ShowAgencyName;
@@ -217,7 +203,6 @@ namespace RadioLog.ViewModels
         public void SaveChanges()
         {
             RadioLog.Common.AppSettings.Instance.CurrentTheme = CurrentTheme;
-            RadioLog.Common.AppSettings.Instance.CurrentAccent = CurrentAccent;
             RadioLog.Common.AppSettings.Instance.ShowSourceName = ShowSourceName;
             RadioLog.Common.AppSettings.Instance.ShowUnitId = ShowUnitId;
             RadioLog.Common.AppSettings.Instance.ShowAgencyName = ShowAgencyName;
@@ -304,21 +289,6 @@ namespace RadioLog.ViewModels
             }
         }
 
-        public string CurrentAccent
-        {
-            get { return _accent; }
-            set
-            {
-                if (_accent != value)
-                {
-                    _accent = value;
-                    OnPropertyChanged("CurrentAccent");
-                    ChangesMade = true;
-                    DisplaySelectedTheme();
-                }
-            }
-        }
-
         public bool ShowSourceName { get { return _showSourceName; } set { if (_showSourceName != value) { _showSourceName = value; OnPropertyChanged("ShowSourceName"); ChangesMade = true; } } }
         public bool ShowUnitId { get { return _showUnitId; } set { if (_showUnitId != value) { _showUnitId = value; OnPropertyChanged("ShowUnitId"); ChangesMade = true; } } }
         public bool ShowAgencyName { get { return _showAgencyName; } set { if (_showAgencyName != value) { _showAgencyName = value; OnPropertyChanged("ShowAgencyName"); ChangesMade = true; } } }
@@ -359,7 +329,6 @@ namespace RadioLog.ViewModels
         }
 
         public ObservableCollection<ThemeListItem> ThemeList { get { return _themeList; } }
-        public ObservableCollection<string> AccentList { get { return _accentList; } }
         public ObservableCollection<ModeListItem> ModeList { get { return _modeList; } }
         public ObservableCollection<DisplayStyleListItem> DisplayList { get { return _displayList; } }
         public ObservableCollection<ViewSizeListItem> ViewSizeList { get { return _viewSizeList; } }

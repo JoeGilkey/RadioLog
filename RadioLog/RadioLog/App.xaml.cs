@@ -206,25 +206,14 @@ namespace RadioLog
 
             RunDefaultConnectionLimitConfig();
 
-            if (string.IsNullOrWhiteSpace(RadioLog.Common.AppSettings.Instance.CurrentAccent))
+            if (string.IsNullOrWhiteSpace(RadioLog.Common.AppSettings.Instance.CurrentTheme) || !ControlzEx.Theming.ThemeManager.Current.Themes.Any(t => t.Name == RadioLog.Common.AppSettings.Instance.CurrentTheme))
             {
-                var theme = MahApps.Metro.ThemeManager.DetectAppStyle(this);
-                RadioLog.Common.AppSettings.Instance.CurrentTheme = theme.Item1.Name;
-                RadioLog.Common.AppSettings.Instance.CurrentAccent = theme.Item2.Name;
+
+                RadioLog.Common.AppSettings.Instance.CurrentTheme = ControlzEx.Theming.ThemeManager.Current.DetectTheme()?.Name;
             }
             else
             {
-                MahApps.Metro.Accent accent = MahApps.Metro.ThemeManager.Accents.FirstOrDefault(a => a.Name == RadioLog.Common.AppSettings.Instance.CurrentAccent);
-                if (accent != null)
-                {
-                    MahApps.Metro.ThemeManager.ChangeAppStyle(App.Current, accent, MahApps.Metro.ThemeManager.GetAppTheme(RadioLog.Common.AppSettings.Instance.CurrentTheme));
-                }
-                else
-                {
-                    var theme = MahApps.Metro.ThemeManager.DetectAppStyle(this);
-                    RadioLog.Common.AppSettings.Instance.CurrentTheme = theme.Item1.Name;
-                    RadioLog.Common.AppSettings.Instance.CurrentAccent = theme.Item2.Name;
-                }
+                ControlzEx.Theming.ThemeManager.Current.ChangeTheme(App.Current, RadioLog.Common.AppSettings.Instance.CurrentTheme);
             }
 
             if (!RadioLog.Common.AppSettings.Instance.InitialLayoutDone)

@@ -48,8 +48,8 @@ namespace RadioLog.Windows
             tbSourceName.Text = _src.SourceName;
             tbStreamURL.Text = _src.SourceLocation;
             sRecordingKickTime.Value = _src.RecordingKickTime;
-            tsRecordingEnabled.IsChecked = _src.RecordAudio;
-            tsPriority.IsChecked = _src.IsPriority;
+            tsRecordingEnabled.IsOn = _src.RecordAudio;
+            tsPriority.IsOn = _src.IsPriority;
             cbDecodeMDC1200.IsChecked = _src.DecodeMDC1200;
             cbDecodeGEStar.IsChecked = _src.DecodeGEStar;
             cbDecodeFleetSync.IsChecked = _src.DecodeFleetSync;
@@ -118,8 +118,8 @@ namespace RadioLog.Windows
             _src.SourceName = tbSourceName.Text;
             _src.SourceLocation = tbStreamURL.Text;
             _src.RecordingKickTime = (int)(sRecordingKickTime.Value);
-            _src.RecordAudio = tsRecordingEnabled.IsChecked == true;
-            _src.IsPriority = tsPriority.IsChecked == true;
+            _src.RecordAudio = tsRecordingEnabled.IsOn == true;
+            _src.IsPriority = tsPriority.IsOn == true;
             _src.DecodeMDC1200 = cbDecodeMDC1200.IsChecked == true;
             _src.DecodeGEStar = cbDecodeGEStar.IsChecked == true;
             _src.DecodeFleetSync = cbDecodeFleetSync.IsChecked == true;

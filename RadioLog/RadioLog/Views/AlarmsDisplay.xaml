@@ -17,7 +17,7 @@
     </UserControl.Resources>
     <Grid>
         <DockPanel x:Name="dpAlarms">
-            <Rectangle DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="1" Fill="{DynamicResource AccentColorBrush}"></Rectangle>
+            <Rectangle DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="1" Fill="{DynamicResource MahApps.Brushes.Accent}"></Rectangle>
             <Grid DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>

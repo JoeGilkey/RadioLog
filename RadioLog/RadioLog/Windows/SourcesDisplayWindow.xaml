@@ -4,10 +4,10 @@
         xmlns:local="clr-namespace:RadioLog"
         xmlns:views="clr-namespace:RadioLog.Views"
         xmlns:cc="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         WindowTransitionsEnabled="False"
         UseLayoutRounding="True"
-        GlowBrush="{DynamicResource AccentColorBrush}"
+        GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
         Title="Sources" Height="350" Width="525" ShowCloseButton="False" ShowIconOnTitleBar="False" ShowMinButton="False" ShowSystemMenuOnRightClick="False" WindowStartupLocation="Manual">
     <Window.Resources>
         <cc:GroupColorToBrushConverter x:Key="GroupColorToBrushConverter"/>

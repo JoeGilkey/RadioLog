@@ -5,7 +5,7 @@
         xmlns:local="clr-namespace:RadioLog"
         xmlns:views="clr-namespace:RadioLog.Views"
         xmlns:cc="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         WindowTransitionsEnabled="False"
         Title="Roll Call" Height="300" Width="480">
     <Window.Resources>
@@ -18,7 +18,7 @@
                 <Border x:Name="Border"
 								 Background="DarkGray"
 								 BorderThickness="0,1,0,0"
-								 BorderBrush="{DynamicResource AccentColorBrush}"
+								 BorderBrush="{DynamicResource MahApps.Brushes.Accent}"
 								 Margin="0,5"
                                  Padding="8,1"
                                  MinWidth="210"
@@ -75,7 +75,7 @@
                 <ColumnDefinition Width="4"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="4" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Fill="{DynamicResource AccentColorBrush}"/>
+            <Rectangle HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="4" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Fill="{DynamicResource MahApps.Brushes.Accent}"/>
             <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Left"></StackPanel>
             <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button x:Name="btnClearAll" HorizontalAlignment="Stretch" Margin="2,1,6,1" Background="#FFa60800" Click="btnClearAll_Click">

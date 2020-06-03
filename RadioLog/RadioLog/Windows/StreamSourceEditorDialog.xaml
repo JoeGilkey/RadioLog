@@ -1,9 +1,9 @@
 ﻿<rlw:BaseRadioLogWindow x:Class="RadioLog.Windows.StreamSourceEditorDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:rlw="clr-namespace:RadioLog.Windows"
-        GlowBrush="{DynamicResource AccentColorBrush}"
+        GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
         WindowTransitionsEnabled="False"
         Topmost="True"
         Title="Streaming Audio Editor" Height="360" Width="840" WindowStyle="ToolWindow" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" ShowCloseButton="False" ShowMaxRestoreButton="False" ShowMinButton="False" ShowIconOnTitleBar="False">
@@ -54,9 +54,9 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock HorizontalAlignment="Right" Text="Priority:" Margin="8" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
-                <Controls:ToggleSwitch x:Name="tsPriority" Grid.Column="1" OnLabel="Yes " OffLabel="No " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Controls:ToggleSwitch x:Name="tsPriority" Grid.Column="1" OnContent="Yes " OffContent="No " HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBlock HorizontalAlignment="Right" Text="Record Audio:" Margin="8" Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
-                <Controls:ToggleSwitch x:Name="tsRecordingEnabled" Grid.Column="3" OnLabel="Yes " OffLabel="No " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Controls:ToggleSwitch x:Name="tsRecordingEnabled" Grid.Column="3" OnContent="Yes " OffContent="No " HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBlock HorizontalAlignment="Right" Text="Recording Style:" Margin="8" Grid.Column="4" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
                 <ComboBox x:Name="cbRecordingStyle" Grid.Column="5" VerticalAlignment="Center" Margin="4" HorizontalAlignment="Stretch" SelectedIndex="0" SelectionChanged="cbRecordingStyle_SelectionChanged">
                     <ComboBoxItem>VOX Style</ComboBoxItem>

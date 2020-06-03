@@ -1,7 +1,7 @@
 ﻿<Controls:MetroWindow x:Class="RadioLog.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:Dialogs="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
         xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
         xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
@@ -11,7 +11,7 @@
         meffed:ViewModelLocator.ViewModel="MainViewModel"
         WindowTransitionsEnabled="False"
         UseLayoutRounding="True"
-        GlowBrush="{DynamicResource AccentColorBrush}"
+        GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
         Title="RadioLog" Height="350" Width="525"
         WindowState="Maximized"
         Closing="MetroWindow_Closing">

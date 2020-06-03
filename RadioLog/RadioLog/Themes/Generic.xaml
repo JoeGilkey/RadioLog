@@ -70,7 +70,7 @@
                                     Value="2" />
                             <Setter TargetName="Background"
                                     Property="Background"
-                                    Value="{DynamicResource AccentColorBrush}" />
+                                    Value="{DynamicResource MahApps.Brushes.Accent}" />
                             <Setter TargetName="Background"
                                     Property="BorderBrush"
                                     Value="{DynamicResource GrayBrush5}" />

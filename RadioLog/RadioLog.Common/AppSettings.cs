@@ -1013,11 +1013,6 @@ namespace RadioLog.Common
             get { return ReadString("RadioLog", "CurrentTheme"); }
             set { WriteString("RadioLog", "CurrentTheme", value, "CurrentTheme"); }
         }
-        public string CurrentAccent
-        {
-            get { return ReadString("RadioLog", "CurrentAccent"); }
-            set { WriteString("RadioLog", "CurrentAccent", value, "CurrentAccent"); }
-        }
 
         public string LogFileDirectory
         {

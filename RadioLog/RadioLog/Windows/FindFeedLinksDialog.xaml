@@ -1,11 +1,10 @@
 ﻿<rlw:BaseRadioLogWindow x:Class="RadioLog.Windows.FindFeedLinksDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:rlw="clr-namespace:RadioLog.Windows"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:Behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
-        GlowBrush="{DynamicResource AccentColorBrush}"
+        GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
         WindowTransitionsEnabled="False"
         Topmost="True"
         Closing="BaseRadioLogWindow_Closing"
@@ -15,7 +14,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TabControl x:Name="tcSource" Controls:TabControlHelper.IsUnderlined="True">
+        <TabControl x:Name="tcSource">
             <TabItem Header="RR/Broacastify" Grid.IsSharedSizeScope="True">
                 <Grid>
                     <Grid.RowDefinitions>

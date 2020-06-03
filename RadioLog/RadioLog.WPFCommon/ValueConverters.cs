@@ -55,7 +55,7 @@ namespace RadioLog.WPFCommon
         {
             if (_highlightdBrush == null)
             {
-                object o = System.Windows.Application.Current.FindResource("AccentColorBrush");
+                object o = System.Windows.Application.Current.FindResource("MahApps.Brushes.Accent");
                 if (o == null)
                     _highlightdBrush = System.Windows.Media.Brushes.Transparent;
                 else

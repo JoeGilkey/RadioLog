@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:common="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:wpf="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
              mc:Ignorable="d"
              Width="{Binding ViewWidth}">
@@ -30,9 +30,9 @@
             <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding SourceName, Mode=OneWay}" FontSize="{Binding FontSize}" FontWeight="Bold" Grid.ColumnSpan="4" Margin="4" TextWrapping="NoWrap" />
             <TextBlock Grid.Row="1" HorizontalAlignment="Stretch" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding SourceTitle, Mode=OneWay}" FontSize="{Binding FontSize}" Grid.ColumnSpan="4" Margin="4" TextWrapping="NoWrap" />
             <TextBlock Grid.Row="2" Grid.Column="1" TextAlignment="Center" Text="Volume" Margin="2,4,4,4" VerticalAlignment="Center" FontSize="{Binding SmallFontSize}" Visibility="{Binding VolumeControlSupported, Converter={StaticResource PropertyEnabledToVisibilityConverter}}"/>
-            <Controls:ToggleSwitch SwitchForeground="{Binding Path=CalculatedSourceColor, Converter={StaticResource SourceColorToBrushConverter}}" Grid.Row="2" Grid.Column="0" Margin="4,0" Grid.RowSpan="3" Header="Enabled" OnLabel="" OffLabel="" IsChecked="{Binding IsEnabled}" Visibility="{Binding EnabledButtonVisible}" VerticalAlignment="Center"/>
+            <Controls:ToggleSwitch Grid.Row="2" Grid.Column="0" Margin="4,0" Grid.RowSpan="3" Header="Enabled" OnContent="" OffContent="" IsOn="{Binding IsEnabled}" Visibility="{Binding EnabledButtonVisible}" VerticalAlignment="Center"/>
             <Slider Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Minimum="0" Maximum="{Binding MaxVolume, Mode=OneWay}" Margin="4,0" Value="{Binding Volume}" VerticalAlignment="Center" Visibility="{Binding VolumeControlSupported, Converter={StaticResource PropertyEnabledToVisibilityConverter}}"/>
-            <Controls:ToggleSwitch SwitchForeground="{Binding Path=CalculatedSourceColor, Converter={StaticResource SourceColorToBrushConverter}}" Margin="4,0" Grid.Row="2" Grid.RowSpan="3" Grid.Column="2" Header="Record" OnLabel="" OffLabel="" IsChecked="{Binding RecordAudio}" Visibility="{Binding RecordingButtonVisible}" VerticalAlignment="Center"/>
+            <Controls:ToggleSwitch Margin="4,0" Grid.Row="2" Grid.RowSpan="3" Grid.Column="2" Header="Record" OnContent="" OffContent="" IsOn="{Binding RecordAudio}" Visibility="{Binding RecordingButtonVisible}" VerticalAlignment="Center"/>
             <ToggleButton x:Name="btnToggleMuteOthers" Grid.Row="2" Grid.RowSpan="3" Margin="2,0" Grid.Column="3" IsEnabled="{Binding IsNonMutedSourceEnabled}" IsChecked="{Binding IsNonMutedSource}" VerticalAlignment="Stretch" Click="btnToggleMuteOthers_Click" Style="{DynamicResource AccentToggleButton}">
                 <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Grid.RowDefinitions>

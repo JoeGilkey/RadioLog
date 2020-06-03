@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioLog", "RadioLog\RadioLog.csproj", "{78DFA5E7-99EA-49DE-878C-A211DBF0BEE4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEFedMVVM.WPF", "External\MEFedMVVM.WPF\MEFedMVVM.WPF.csproj", "{1909F45C-9C63-40B7-87A9-C68E78E8D501}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinch.WPF", "External\CinchV2.WPF\Cinch.WPF.csproj", "{673879AD-29C1-42B8-9A79-3750418696AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioLog.WPFCommon", "RadioLog.WPFCommon\RadioLog.WPFCommon.csproj", "{14A9610E-CB9E-409F-830C-13189023A5AB}"
 EndProject
@@ -20,8 +16,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioLog.FeedUtils", "RadioLog.FeedUtils\RadioLog.FeedUtils.csproj", "{5A036DA8-9C28-4511-85A4-1A93904FCBFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioLog.Broadcastify", "RadioLog.Broadcastify\RadioLog.Broadcastify.csproj", "{C2383C0E-A3C6-4BDF-BB25-460A1744C495}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotSpatial.Positioning", "External\DotSpatial.Positioning\DotSpatial.Positioning.csproj", "{26E18588-B04D-4987-BF36-8206A7E36FF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponderApps.EditorDisplay", "ResponderApps.EditorDisplay\ResponderApps.EditorDisplay.csproj", "{A67AC428-F50A-49F4-89AA-90DB1992C97A}"
 EndProject
@@ -45,26 +39,6 @@ Global
 		{78DFA5E7-99EA-49DE-878C-A211DBF0BEE4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{78DFA5E7-99EA-49DE-878C-A211DBF0BEE4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{78DFA5E7-99EA-49DE-878C-A211DBF0BEE4}.Release|x86.ActiveCfg = Release|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{1909F45C-9C63-40B7-87A9-C68E78E8D501}.Release|x86.ActiveCfg = Release|Any CPU
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Debug|x86.ActiveCfg = Debug|x86
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Debug|x86.Build.0 = Debug|x86
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Release|Any CPU.ActiveCfg = Release|x86
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Release|Mixed Platforms.Build.0 = Release|x86
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Release|x86.ActiveCfg = Release|x86
-		{673879AD-29C1-42B8-9A79-3750418696AB}.Release|x86.Build.0 = Release|x86
 		{14A9610E-CB9E-409F-830C-13189023A5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14A9610E-CB9E-409F-830C-13189023A5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14A9610E-CB9E-409F-830C-13189023A5AB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -125,16 +99,6 @@ Global
 		{C2383C0E-A3C6-4BDF-BB25-460A1744C495}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C2383C0E-A3C6-4BDF-BB25-460A1744C495}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C2383C0E-A3C6-4BDF-BB25-460A1744C495}.Release|x86.ActiveCfg = Release|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{26E18588-B04D-4987-BF36-8206A7E36FF9}.Release|x86.ActiveCfg = Release|Any CPU
 		{A67AC428-F50A-49F4-89AA-90DB1992C97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A67AC428-F50A-49F4-89AA-90DB1992C97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A67AC428-F50A-49F4-89AA-90DB1992C97A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -150,5 +114,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FA0BD38-7376-4DDB-A419-2BA9DDA1BFC6}
 	EndGlobalSection
 EndGlobal

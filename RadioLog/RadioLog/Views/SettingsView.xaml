@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
              xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
              meffed:ViewModelLocator.ViewModel="SettingsViewModel"
@@ -37,10 +37,10 @@
                     <ComboBox x:Name="cbMode" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ModeList}" DisplayMemberPath="ModeName" SelectedValuePath="Mode" SelectedValue="{Binding WorkstationMode}"/>
                     <ComboBox x:Name="cbDisplay" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding DisplayList}" DisplayMemberPath="DisplayName" SelectedValuePath="DisplayStyle" SelectedValue="{Binding MainDisplayStyle}"/>
                 </Grid>
-                <Button Margin="2" x:Name="btnAddNewSource" Click="btnAddNewSource_Click" Style="{StaticResource AccentedSquareButtonStyle}" FontSize="16" FontWeight="Bold">Add New Source</Button>
-                <Button Margin="2" x:Name="btnManageAgencies" Click="btnManageAgencies_Click" Style="{StaticResource AccentedSquareButtonStyle}">Manage Agencies</Button>
-                <Button Margin="2" x:Name="btnManageUnits" Click="btnManageUnits_Click" Style="{StaticResource AccentedSquareButtonStyle}">Manage Units</Button>
-                <Button Margin="2" x:Name="btnManageRadios" Click="btnManageRadios_Click" Style="{StaticResource AccentedSquareButtonStyle}">Manage Radios</Button>
+                <Button Margin="2" x:Name="btnAddNewSource" Click="btnAddNewSource_Click" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" FontSize="16" FontWeight="Bold">Add New Source</Button>
+                <Button Margin="2" x:Name="btnManageAgencies" Click="btnManageAgencies_Click" Style="{StaticResource MahApps.Styles.Button.Square.Accent}">Manage Agencies</Button>
+                <Button Margin="2" x:Name="btnManageUnits" Click="btnManageUnits_Click" Style="{StaticResource MahApps.Styles.Button.Square.Accent}">Manage Units</Button>
+                <Button Margin="2" x:Name="btnManageRadios" Click="btnManageRadios_Click" Style="{StaticResource MahApps.Styles.Button.Square.Accent}">Manage Radios</Button>
                 <CheckBox Margin="2" IsChecked="{Binding ShouldAutoSaveContacts}">Auto-Save Contacts</CheckBox>
                 <CheckBox Margin="2" IsChecked="{Binding EnableClipboardStreamURLIntegration}">Enable Clipboard Integration</CheckBox>
                 <CheckBox Margin="2" IsChecked="{Binding ShowSourceName}">Show Source Name</CheckBox>
@@ -114,20 +114,17 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="4" Text="Theme:"/>
-                    <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="4" Text="Accent:"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="4" Text="Font Size:"/>
-                    <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="4" Text="Feed Size:"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="4" Text="Font Size:"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="4" Text="Feed Size:"/>
 
                     <ComboBox x:Name="cbTheme" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding ThemeList}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding CurrentTheme}"/>
-                    <ComboBox x:Name="cbAccent" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding AccentList}" SelectedValue="{Binding CurrentAccent}"/>
-                    <Controls:NumericUpDown x:Name="nudGridFontSize" Grid.Row="2" Grid.Column="1" Minimum="16" Maximum="48" Value="{Binding GridFontSize}"/>
-                    <ComboBox x:Name="cbFeedSize" Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ViewSizeList}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding ViewSize}"/>
+                    <Controls:NumericUpDown x:Name="nudGridFontSize" Grid.Row="1" Grid.Column="1" Minimum="16" Maximum="48" Value="{Binding GridFontSize}"/>
+                    <ComboBox x:Name="cbFeedSize" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding ViewSizeList}" DisplayMemberPath="Name" SelectedValuePath="Value" SelectedValue="{Binding ViewSize}"/>
                 </Grid>
-                <Button Margin="2" x:Name="btnExportSettings" Click="btnExportSettings_Click" Style="{StaticResource AccentedSquareButtonStyle}" FontSize="16" FontWeight="Bold">Export Settings</Button>
-                <Button Margin="2" x:Name="btnImportSettings" Click="btnImportSettings_Click" Style="{StaticResource AccentedSquareButtonStyle}" FontSize="16" FontWeight="Bold">Import Settings</Button>
+                <Button Margin="2" x:Name="btnExportSettings" Click="btnExportSettings_Click" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" FontSize="16" FontWeight="Bold">Export Settings</Button>
+                <Button Margin="2" x:Name="btnImportSettings" Click="btnImportSettings_Click" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" FontSize="16" FontWeight="Bold">Import Settings</Button>
             </StackPanel>
         </ScrollViewer>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">

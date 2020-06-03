@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:RadioLog"
              xmlns:views="clr-namespace:RadioLog.Views"
              xmlns:cc="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -76,6 +76,6 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-        <Rectangle x:Name="rViewSplit" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="1" Fill="{DynamicResource AccentColorBrush}" Grid.ColumnSpan="2"></Rectangle>
+        <Rectangle x:Name="rViewSplit" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="1" Fill="{DynamicResource MahApps.Brushes.Accent}" Grid.ColumnSpan="2"></Rectangle>
     </Grid>
 </local:BaseMainWindowView>

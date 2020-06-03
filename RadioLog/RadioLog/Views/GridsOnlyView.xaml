@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:RadioLog"
              xmlns:views="clr-namespace:RadioLog.Views"
              xmlns:cc="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -20,8 +20,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <views:LogDisplay x:Name="vwLogDisplay" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0"/>
-        <GridSplitter x:Name="gsLog" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="{DynamicResource AccentColorBrush}" ShowsPreview="True" Height="5" ResizeDirection="Rows"/>
+        <GridSplitter x:Name="gsLog" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="{DynamicResource MahApps.Brushes.Accent}" ShowsPreview="True" Height="5" ResizeDirection="Rows"/>
         <views:AlarmsDisplay x:Name="vwAlarmsDisplay" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Rectangle Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="1" Fill="{DynamicResource AccentColorBrush}"></Rectangle>
+        <Rectangle Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="1" Fill="{DynamicResource MahApps.Brushes.Accent}"></Rectangle>
     </Grid>
 </local:BaseMainWindowView>
