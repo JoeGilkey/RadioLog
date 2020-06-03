@@ -6,7 +6,7 @@
         xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
         xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
         xmlns:views="clr-namespace:RadioLog.Views"
-        xmlns:cc="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
+        xmlns:cc="clr-namespace:RadioLog.WPFCommon"
         xmlns:local="clr-namespace:RadioLog"
         meffed:ViewModelLocator.ViewModel="MainViewModel"
         WindowTransitionsEnabled="False"

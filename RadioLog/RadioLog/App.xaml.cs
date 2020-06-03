@@ -115,18 +115,22 @@ namespace RadioLog
         private static void LoadAssemblyDisplayInfo()
         {
             Assembly ass = typeof(App).Assembly;
-            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-            {
-                Version netVer = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
-                AssemblyShortVersionInfo = string.Format("{0}.{1}", netVer.Major, netVer.Minor);
-                AssemblyLongVersionInfo = string.Format("{0}.{1}.{2}.{3}", netVer.Major, netVer.Minor, netVer.Build, netVer.Revision);
-            }
-            else
-            {
-                AssemblyName assName = ass.GetName();
-                AssemblyShortVersionInfo = string.Format("{0}.{1}", assName.Version.Major, assName.Version.Minor);
-                AssemblyLongVersionInfo = string.Format("{0}.{1}.{2}.{3}", assName.Version.Major, assName.Version.Minor, assName.Version.Build, assName.Version.Revision);
-            }
+            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            //{
+            //    Version netVer = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+            //    AssemblyShortVersionInfo = string.Format("{0}.{1}", netVer.Major, netVer.Minor);
+            //    AssemblyLongVersionInfo = string.Format("{0}.{1}.{2}.{3}", netVer.Major, netVer.Minor, netVer.Build, netVer.Revision);
+            //}
+            //else
+            //{
+            //    AssemblyName assName = ass.GetName();
+            //    AssemblyShortVersionInfo = string.Format("{0}.{1}", assName.Version.Major, assName.Version.Minor);
+            //    AssemblyLongVersionInfo = string.Format("{0}.{1}.{2}.{3}", assName.Version.Major, assName.Version.Minor, assName.Version.Build, assName.Version.Revision);
+            //}
+
+            AssemblyName assName = ass.GetName();
+            AssemblyShortVersionInfo = string.Format("{0}.{1}", assName.Version.Major, assName.Version.Minor);
+            AssemblyLongVersionInfo = string.Format("{0}.{1}.{2}.{3}", assName.Version.Major, assName.Version.Minor, assName.Version.Build, assName.Version.Revision);
 
             object[] attribs = ass.GetCustomAttributes(typeof(AssemblyProductAttribute), false);
             if (attribs != null && attribs.Length > 0)
@@ -254,34 +258,10 @@ namespace RadioLog
             base.OnExit(e);
         }
 
-        bool IsDeploymentDownloadException(Exception ex)
-        {
-            if (ex == null)
-                return false;
-            System.Deployment.Application.DeploymentDownloadException dex = ex as System.Deployment.Application.DeploymentDownloadException;
-            if (dex == null)
-            {
-                return IsDeploymentDownloadException(ex.InnerException);
-            }
-            else
-            {
-                if (ex.InnerException != null)
-                {
-                    System.Net.WebException we = ex.InnerException as System.Net.WebException;
-                    return (we != null);
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
         void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             e.Handled = true;
             if (e.Exception.GetType() == typeof(System.ArgumentException))
-                return;
-            if (IsDeploymentDownloadException(e.Exception))
                 return;
             try
             {

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:RadioLog"
         xmlns:views="clr-namespace:RadioLog.Views"
-        xmlns:cc="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
+        xmlns:cc="clr-namespace:RadioLog.WPFCommon"
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         WindowTransitionsEnabled="False"
         UseLayoutRounding="True"

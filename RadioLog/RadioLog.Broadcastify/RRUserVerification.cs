@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace RadioLog.Broadcastify
@@ -58,7 +56,7 @@ namespace RadioLog.Broadcastify
             }
             catch (Exception ex)
             {
-                Common.DebugHelper.WriteExceptionToLog("RRUserVerification.VerifyUser", ex, false);
+                Debug.Fail($"RRUserVerification.VerifyUser: {ex}");
                 errorMsg = string.Format("Unable to verify user: {0}", ex.Message);
                 return false;
             }

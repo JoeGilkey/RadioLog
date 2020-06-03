@@ -5,6 +5,7 @@ using System.Text;
 using System.Web;
 using System.Net;
 using System.IO;
+using System.Diagnostics;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -55,7 +56,7 @@ namespace RadioLog.Broadcastify
             {
                 return string.Empty;
             }
-            string dirPath = Common.AppSettings.Instance.AppDataDir;
+            string dirPath = AppDataDir;
             string fileName;
             if (string.IsNullOrWhiteSpace(subCode))
                 fileName = string.Format("RRCache_{0}.json", cacheType);
@@ -98,7 +99,7 @@ namespace RadioLog.Broadcastify
                 }
                 catch (Exception ex)
                 {
-                    Common.DebugHelper.WriteExceptionToLog("FeedAPI:SetCachedData", ex, false, fileName);
+                    Debug.Fail($"FeedAPI:SetCachedData ({fileName}): {ex}");
                 }
             }
         }
@@ -236,7 +237,7 @@ namespace RadioLog.Broadcastify
             }
             catch (Exception ex)
             {
-                Common.DebugHelper.WriteExceptionToLog("Broadcastify.FeedAPI.SendRequest", ex, false);
+                Debug.Fail($"Broadcastify.FeedAPI.SendRequest: {ex}");
                 errorMessage = string.Format("Error sending request: {0}", ex.Message);
                 return null;
             }
@@ -576,21 +577,10 @@ namespace RadioLog.Broadcastify
             return rslt;
         }
 
-        public Genre LastGenre
-        {
-            get { return Common.AppSettings.Instance.ReadEnum<Genre>("RadioReference", "LastGenre", Genre.All); }
-            set { Common.AppSettings.Instance.WriteEnum<Genre>("RadioReference", "LastGenre", value); }
-        }
-        public string LastCountry
-        {
-            get { return Common.AppSettings.Instance.ReadString("RadioReference", "LastCountry", string.Empty); }
-            set { Common.AppSettings.Instance.WriteString("RadioReference", "LastCountry", value); }
-        }
-        public string LastState
-        {
-            get { return Common.AppSettings.Instance.ReadString("RadioReference", "LastState", string.Empty); }
-            set { Common.AppSettings.Instance.WriteString("RadioReference", "LastState", value); }
-        }
+        public Genre LastGenre { get; set; }
+        public string LastCountry { get; set; }
+        public string LastState { get; set; }
+        public string AppDataDir { get; set; }
     }
 
     public enum Genre

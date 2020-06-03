@@ -4,7 +4,7 @@
         xmlns:rlw="clr-namespace:RadioLog.Windows"
         xmlns:local="clr-namespace:RadioLog"
         xmlns:views="clr-namespace:RadioLog.Views"
-        xmlns:cc="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
+        xmlns:cc="clr-namespace:RadioLog.WPFCommon"
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         WindowTransitionsEnabled="False"
         Title="Roll Call" Height="300" Width="480">

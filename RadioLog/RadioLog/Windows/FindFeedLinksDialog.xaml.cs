@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Threading.Tasks;
+using RadioLog.Broadcastify;
 
 namespace RadioLog.Windows
 {
@@ -22,7 +23,13 @@ namespace RadioLog.Windows
         private delegate void DefaultObjectDelegate(object o);
         private delegate void BoolMethodDelegate(bool b);
         private delegate void BoolStringMethodDelegate(bool b, string s);
-        private RadioLog.Broadcastify.FeedAPI _feedAPI = new Broadcastify.FeedAPI();
+        private RadioLog.Broadcastify.FeedAPI _feedAPI = new Broadcastify.FeedAPI()
+        {
+            AppDataDir = Common.AppSettings.Instance.AppDataDir,
+            LastGenre = Common.AppSettings.Instance.ReadEnum<Genre>("RadioReference", "LastGenre", Genre.All),
+            LastCountry = Common.AppSettings.Instance.ReadString("RadioReference", "LastCountry", string.Empty),
+            LastState = Common.AppSettings.Instance.ReadString("RadioReference", "LastState", string.Empty)
+        };
 
         private RadioLog.WPFCommon.ThreadSafeObservableCollection<FoundFeedHolder> _feeds = new WPFCommon.ThreadSafeObservableCollection<FoundFeedHolder>();
         private RadioLog.WPFCommon.ThreadSafeObservableCollection<RadioLog.Broadcastify.FeedItemHolder> _rrFeeds = new WPFCommon.ThreadSafeObservableCollection<Broadcastify.FeedItemHolder>();
@@ -336,6 +343,10 @@ namespace RadioLog.Windows
                     }
                 }
                 tbStatus.Text = string.Format("{0} Feeds found, {1} already setup...", iTotalCnt, iFilteredCnt);
+
+                Common.AppSettings.Instance.WriteEnum<Genre>("RadioReference", "LastGenre", _feedAPI.LastGenre);
+                Common.AppSettings.Instance.WriteString("RadioReference", "LastCountry", _feedAPI.LastCountry);
+                Common.AppSettings.Instance.WriteString("RadioReference", "LastState", _feedAPI.LastState);
             }
         }
 

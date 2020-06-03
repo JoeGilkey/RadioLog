@@ -34,11 +34,7 @@ namespace RadioLog
         delegate void SimpleDelegate();
         delegate void SimpleBoolDelegate(bool b);
         delegate void SimpleStringDelegate(string s);
-        delegate void AppUpdateProgressDelegate(System.Deployment.Application.DeploymentProgressChangedEventArgs e);
-        delegate void AppUpdateCompleteDelegate(System.ComponentModel.AsyncCompletedEventArgs e);
         delegate void AppUpdateActiveDelegate(bool bActive);
-
-        private Task<ProgressDialogController> _appUpdateProgressDlg = null;
 
         public MainWindow()
         {
@@ -182,40 +178,6 @@ namespace RadioLog
             }
         }
         
-        void ProcessAppUpdateProgress(System.Deployment.Application.DeploymentProgressChangedEventArgs e)
-        {
-            if (!Dispatcher.CheckAccess())
-            {
-                Dispatcher.BeginInvoke(new AppUpdateProgressDelegate(ProcessAppUpdateProgress), e);
-            }
-            else
-            {
-                if (_appUpdateProgressDlg == null)
-                {
-                    _appUpdateProgressDlg = this.ShowProgressAsync("Application Update", "Your application is being updated, please wait...");
-                }
-                if (_appUpdateProgressDlg != null && _appUpdateProgressDlg.Result != null)
-                {
-                    _appUpdateProgressDlg.Result.SetProgress(e.ProgressPercentage);
-                }
-            }
-        }
-        void ProcessUpdateCompleteDelegate(System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            if (!Dispatcher.CheckAccess())
-            {
-                Dispatcher.BeginInvoke(new AppUpdateCompleteDelegate(ProcessUpdateCompleteDelegate), e);
-            }
-            else
-            {
-                if (_appUpdateProgressDlg != null && _appUpdateProgressDlg.Result != null)
-                {
-                    _appUpdateProgressDlg.Result.CloseAsync();
-                }
-                _appUpdateProgressDlg = null;
-            }
-        }
-
         private void SetupColumnVisibility()
         {
             if (_mainView != null)

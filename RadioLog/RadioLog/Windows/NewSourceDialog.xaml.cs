@@ -84,6 +84,12 @@ namespace RadioLog.Windows
                 }
             }
 
+            for(int i = 0; i < 100; i++)
+            {
+                _serialPorts.Add($"COM{i + 1}");
+            }
+            //JGcore
+            /*
             string[] serialPorts= System.IO.Ports.SerialPort.GetPortNames();
             if (serialPorts != null && serialPorts.Length > 0)
             {
@@ -92,6 +98,7 @@ namespace RadioLog.Windows
                     _serialPorts.Add(s);
                 }
             }
+            */
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)

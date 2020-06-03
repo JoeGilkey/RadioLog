@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:common="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
              xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
-             xmlns:wpf="clr-namespace:RadioLog.WPFCommon;assembly=RadioLog.WPFCommon"
+             xmlns:wpf="clr-namespace:RadioLog.WPFCommon"
              mc:Ignorable="d"
              Width="{Binding ViewWidth}">
     <UserControl.Resources>
